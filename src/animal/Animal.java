@@ -1,13 +1,23 @@
 package animal;
 
-import javax.xml.stream.Location;
 
-public abstract class Animal {
+
+public abstract class Animal extends Organism {
     private Location location;
-    abstract void generate();
+
+
+    public void addHealth(int health) {
+        this.health = health;
+    }
+    private double health=0;
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
     abstract void eat();
     abstract void move();
-    abstract void die();
+
 
     public Location getLocation() {
         return location;

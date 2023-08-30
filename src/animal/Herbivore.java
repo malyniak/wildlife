@@ -2,24 +2,14 @@ package animal;
 
 import javax.xml.stream.Location;
 
-public class Herbivore extends Animal{
-    @Override
-    void generate() {
-
-    }
+public abstract class Herbivore extends Animal{
 
     @Override
     void eat() {
-
     }
 
     @Override
     void move() {
-
     }
 
-    @Override
-    void die() {
-
-    }
 }

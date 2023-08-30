@@ -1,8 +1,8 @@
-public class Island {
-    private Location location;
-    private Location[][] area=new Location [location.height][location.width];
+import animal.Location;
 
-    public boolean isEmptyPlace(int x, int y) {
-        return area[x][y]==null;
-    }
+public class Island {
+    public int height;
+    public int width;
+    private Location[][] area=new Location [width][height];
+
 }
