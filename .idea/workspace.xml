@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Bear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Boa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Boar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Duck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Eagle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Fox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Goat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Gusin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Gusin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Herbivore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Organism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Plant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Predator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Sheep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Wolf.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +58,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="animal" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,5 +90,71 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

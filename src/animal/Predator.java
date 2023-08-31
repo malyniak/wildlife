@@ -4,19 +4,13 @@ package animal;
 import java.util.*;
 
 public abstract class Predator extends Animal{
-    private final int weight=500;
-    private final int maxQuantityInLocation=5;
-    private final int speed=2;
-    private final int kgEnoughFood=80;
-
-    private int health=100;
-    Map<Organism, Integer> canEat=new HashMap<>();
-
     boolean isAlive=true;
 
     @Override
     public void generate() {
-
+        Integer numberOfThisAnimal = getLocation().map.get(this);
+        if(numberOfThisAnimal>1)
+            getLocation().map.put(this, numberOfThisAnimal+2);
     }
 
     @Override
@@ -24,7 +18,7 @@ public abstract class Predator extends Animal{
         Set<Organism> organisms = getLocation().map.keySet();
         for(Organism organism:organisms) {
             if(canEat.containsKey(organism)) {
-                if(kgEnoughFood!=getHealth()) {
+                if(getHealth()<Constants.MAX_HEALTH) {
                    addHealth(organism.getWeight());
                     organism.die();
                 }
@@ -34,19 +28,18 @@ public abstract class Predator extends Animal{
     }
 
     @Override
-    void move() {
-
-    }
-
-    @Override
     public void die() {
-        Integer integer = getLocation().map.get(this);
-        getLocation().map.put(this, --integer);
-        this.isAlive=false;
+        if(getHealth()==0) {
+            Integer integer = getLocation().map.get(this);
+            getLocation().map.put(this, --integer);
+          isAlive = false;
+        }
     }
 
 
     public abstract int getWeight();
+    public void move() {
 
+    }
 
 }

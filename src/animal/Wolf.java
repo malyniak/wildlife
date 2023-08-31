@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Wolf extends Predator{
 
-    private final int weight=50;
-    private final int maxQuantityInLocation=30;
-    private final int speed=3;
-    private final int kgEnoughFood=8;
+    private static final int weight=50;
+    private static final int maxQuantityInLocation=30;
+    private static final int speed=3;
+    private static final int kgEnoughFood=8;
     private boolean isAlive=true;
    public Map<Organism, Integer> canEat=new HashMap<>();
     public int getWeight() {

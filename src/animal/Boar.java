@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Boar extends Herbivore{
     private final int weight=400;
-    private final int maxQuantityInLocation=50;
+    private static final int maxQuantityInLocation=50;
     private final int speed=2;
     private final int kgEnoughFood=50;
     private boolean isAlive=true;
@@ -30,6 +30,12 @@ public class Boar extends Herbivore{
     public int getWeight() {
         return weight;
     }
+
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+
     public void initCanEat() {
         canEat.put(new Mouse(), 50);
         canEat.put(new Gusin(), 90);

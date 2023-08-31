@@ -1,15 +1,18 @@
 package animal;
 
 
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Animal extends Organism {
     private Location location;
-
+    private double health=0;
+    Map<Organism, Integer> canEat=new HashMap<>();
 
     public void addHealth(int health) {
-        this.health = health;
+        this.health += health;
     }
-    private double health=0;
+
 
     public void setHealth(double health) {
         this.health = health;

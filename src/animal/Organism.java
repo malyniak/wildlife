@@ -5,4 +5,6 @@ public abstract class Organism {
     public abstract void generate();
     public abstract void die();
     public abstract int getWeight();
+    public abstract int getMaxQuantityInLocation();
+
 }

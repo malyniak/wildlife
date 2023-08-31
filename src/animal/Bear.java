@@ -4,19 +4,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Bear extends Predator{
+
+    private int x=5;
+    private int y=5;
     private final int weight=500;
-    private final int maxQuantityInLocation=5;
+    private static final int maxQuantityInLocation=5;
     private final int speed=2;
     private final int kgEnoughFood=80;
+    private int kgFoodEaten=0;
+    private int health=kgFoodEaten/kgEnoughFood*100;
+    Location location;
 
-    private int health=100;
-    Map<Organism, Integer> canEat=new HashMap<>();
+
+ //   @Override
+ //   void move() {
+  //     setLocation(Constants.AREA[getLocation().width+speed][getLocation().height]);
+  //  }
+
     public int getWeight() {
         return weight;
     }
 
     public Bear() {
         initCanEat();
+        location=Constants.AREA[x][y];
     }
 
     public int getMaxQuantityInLocation() {
@@ -64,7 +75,6 @@ public class Bear extends Predator{
         canEat.put(new Duck(), 10);
     }
 
-    @Override
     public void run() {
 
     }
