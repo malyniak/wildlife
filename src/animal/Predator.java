@@ -14,26 +14,28 @@ public abstract class Predator extends Animal{
     }
 
     @Override
-    void eat() {
+    public void eat() {
         Set<Organism> organisms = getLocation().map.keySet();
         for(Organism organism:organisms) {
-            if(canEat.containsKey(organism)) {
-                if(getHealth()<Constants.MAX_HEALTH) {
-                   addHealth(organism.getWeight());
-                    organism.die();
+            if(canEat.containsKey(organism.getClass())) {
+                if (getHealth() < Constants.MAX_HEALTH) {
+                    addHealth(organism.getWeight());
+                    System.out.println("eagle is eating");
+                    organism.die(this.getLocation());
                 }
+            }
             }
 
         }
-    }
 
-    @Override
-    public void die() {
-        if(getHealth()==0) {
-            Integer integer = getLocation().map.get(this);
-            getLocation().map.put(this, --integer);
+
+
+    public void die(Location location) {
+        Integer integer = location.map.get(this);
+            location.map.put(this, --integer);
           isAlive = false;
-        }
+          System.out.println("organism is not alive");
+
     }
 
 

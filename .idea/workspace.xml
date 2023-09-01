@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Bear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Boa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Boar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Deer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Duck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Eagle.java" afterDir="false" />
@@ -21,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/src/animal/Gusin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Gusin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Herbivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Horse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Mouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Organism.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Plant.java" afterDir="false" />
@@ -39,12 +38,26 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6db053c1-2671-4832-af0e-2cd53fd18b51" />
+        <option name="url" value="https://github.com/malyniak/wildlife.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2UeTcZ0iRlzbSGdnuaJ5sfLfqCA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -54,16 +67,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="animal" />
@@ -96,63 +109,78 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
+          <line>13</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>12</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
           <line>20</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
           <line>21</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
           <line>22</line>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Location.java</url>
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
           <line>24</line>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

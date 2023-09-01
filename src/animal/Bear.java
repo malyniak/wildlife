@@ -63,16 +63,16 @@ public class Bear extends Predator{
     }
 
     public void initCanEat(){
-        canEat.put(new Boa(), 80);
-        canEat.put(new Horse(), 40);
-        canEat.put(new Deer(), 80);
-        canEat.put(new Rabbit(), 80);
-        canEat.put(new Mouse(), 90);
-        canEat.put(new Goat(), 70);
-        canEat.put(new Sheep(), 70);
-        canEat.put(new Boar(), 50);
-        canEat.put(new Buffalo(), 20);
-        canEat.put(new Duck(), 10);
+        canEat.put(Boa.class, 80);
+        canEat.put(Horse.class, 40);
+        canEat.put(Deer.class, 80);
+        canEat.put(Rabbit.class, 80);
+        canEat.put(Mouse.class, 90);
+        canEat.put(Goat.class, 70);
+        canEat.put(Sheep.class, 70);
+        canEat.put(Boar.class, 50);
+        canEat.put(Buffalo.class, 20);
+        canEat.put(Duck.class, 10);
     }
 
     public void run() {

@@ -15,10 +15,10 @@ public class Rabbit extends Herbivore{
         initCanEat();
     }
 
-    Map<Organism, Integer> canEat=new HashMap<>();
+    Map<Class<?>, Integer> canEat=new HashMap<>();
     @Override
     public double getHealth() {
-        return 0;
+        return health;
     }
 
     @Override
@@ -26,14 +26,10 @@ public class Rabbit extends Herbivore{
 
     }
 
-    @Override
-    public void die() {
-
-    }
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
 
     @Override
@@ -42,6 +38,6 @@ public class Rabbit extends Herbivore{
     }
 
     public void initCanEat(){
-        canEat.put(new Plant(), 100);
+        canEat.put(Plant.class, 100);
     }
 }

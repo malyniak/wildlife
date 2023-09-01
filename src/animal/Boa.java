@@ -40,10 +40,20 @@ public class Boa extends Predator{
         return 0;
     }
 
+    public Boa() {
+        initCanEat();
+    }
+
     @Override
     public int getWeight() {
         return 0;
     }
 
+    public void initCanEat(){
+        canEat.put(Fox.class, 15);
+        canEat.put(Rabbit.class, 20);
+        canEat.put(Mouse.class, 40);
+        canEat.put(Duck.class, 10);
+    }
 
 }

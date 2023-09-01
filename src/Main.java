@@ -1,5 +1,4 @@
-import animal.Boa;
-import animal.Location;
+import animal.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,9 +8,13 @@ public class Main {
                 Location location = new Location(i, j);
                 location.setMap();
                 locations[i][j]=location;
-
+                for(Organism organism:location.map.keySet()) {
+                    organism.setLocation(location);
+                    if(organism instanceof Predator)
+                        organism.eat();
+                    }
+                }
             }
         }
 
     }
-}

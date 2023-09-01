@@ -9,21 +9,16 @@ public class Boar extends Herbivore{
     private final int speed=2;
     private final int kgEnoughFood=50;
     private boolean isAlive=true;
-    private int health=100;
-    Map<Organism, Integer> canEat=new HashMap<>();
+    private int health=50;
+    Map<Class<?>, Integer> canEat=new HashMap<>();
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
     }
 
     @Override
     public void generate() {
-
-    }
-
-    @Override
-    public void die() {
 
     }
 
@@ -37,10 +32,12 @@ public class Boar extends Herbivore{
     }
 
     public void initCanEat() {
-        canEat.put(new Mouse(), 50);
-        canEat.put(new Gusin(), 90);
-        canEat.put(new Plant(), 100);
+        canEat.put(Mouse.class, 50);
+        canEat.put(Gusin.class, 90);
+        canEat.put(Plant.class, 100);
     }
 
-
+    public Boar() {
+        initCanEat();
+    }
 }

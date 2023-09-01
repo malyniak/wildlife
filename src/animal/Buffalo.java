@@ -18,12 +18,6 @@ public class Buffalo extends Herbivore {
     public void generate() {
 
     }
-
-    @Override
-    public void die() {
-
-    }
-
     @Override
     public int getWeight() {
         return 0;
@@ -32,5 +26,12 @@ public class Buffalo extends Herbivore {
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+    public void initCanEat() {
+        canEat.put(Gusin.class, 90);
+    }
+
+    public Buffalo() {
+        initCanEat();
     }
 }

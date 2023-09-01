@@ -19,10 +19,6 @@ public class Gusin extends Herbivore{
 
     }
 
-    @Override
-    public void die() {
-
-    }
 
     @Override
     public int getWeight() {
@@ -32,5 +28,8 @@ public class Gusin extends Herbivore{
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+    public void initCanEat(){
+        canEat.put(Plant.class, 100);
     }
 }

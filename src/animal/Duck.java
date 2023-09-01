@@ -20,11 +20,6 @@ public class Duck extends Herbivore{
     }
 
     @Override
-    public void die() {
-
-    }
-
-    @Override
     public int getWeight() {
         return 0;
     }
@@ -32,5 +27,13 @@ public class Duck extends Herbivore{
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+    public void initCanEat(){
+        canEat.put(Gusin.class, 90);
+        canEat.put(Plant.class, 100);
+    }
+
+    public Duck() {
+        initCanEat();
     }
 }

@@ -10,7 +10,7 @@ public class Eagle extends Predator {
     private final int kgEnoughFood=1;
     private boolean isAlive=true;
     private int health=100;
-    Map<Organism, Integer> canEat=new HashMap<>();
+    Map<Class<?>, Integer> canEat=new HashMap<>();
     @Override
     public double getHealth() {
         return 0;
@@ -31,10 +31,11 @@ public class Eagle extends Predator {
     }
 
     public void initCanEat(){
-        canEat.put(new Rabbit(), 70);
-        canEat.put(new Mouse(), 90);
-        canEat.put(new Gusin(), 40);
-        canEat.put(new Duck(), 60);
+        canEat.put(Fox.class, 10);
+        canEat.put(Rabbit.class, 90);
+        canEat.put(Mouse.class, 90);
+        canEat.put(Duck.class, 80);
     }
+
 
 }

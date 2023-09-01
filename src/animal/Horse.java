@@ -10,10 +10,10 @@ public class Horse extends Herbivore{
     private final int kgEnoughFood=1;
     private boolean isAlive=true;
     private int health=100;
-    Map<Organism, Integer> canEat=new HashMap<>();
+    Map<Class<?>, Integer> canEat=new HashMap<>();
     @Override
     public double getHealth() {
-        return 0;
+        return health;
     }
 
     public Horse() {
@@ -24,15 +24,9 @@ public class Horse extends Herbivore{
     public void generate() {
 
     }
-
-    @Override
-    public void die() {
-
-    }
-
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
 
     @Override
@@ -41,6 +35,6 @@ public class Horse extends Herbivore{
     }
 
     public void initCanEat(){
-        canEat.put(new Plant(), 100);
+        canEat.put(Plant.class, 100);
     }
 }

@@ -44,12 +44,10 @@ public class Goat extends Herbivore{
     }
 
     @Override
-    public void die() {
-
-    }
-
-    @Override
     public int getWeight() {
         return 0;
+    }
+    public void initCanEat(){
+        canEat.put(Plant.class, 100);
     }
 }

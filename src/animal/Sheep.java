@@ -19,17 +19,19 @@ public class Sheep extends Herbivore{
     }
 
     @Override
-    public void die() {
-
-    }
-
-    @Override
     public int getWeight() {
         return 0;
+    }
+
+    public Sheep() {
+        initCanEat();
     }
 
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+    public void initCanEat(){
+        canEat.put(Plant.class, 100);
     }
 }
