@@ -9,12 +9,20 @@ public class Fox extends Herbivore {
     private final int speed = 2;
     private final int kgEnoughFood = 2;
     private boolean isAlive = true;
-    private int health = 100;
-    Map<Class<?>, Integer> canEat = new HashMap<>();
+    private double health = 50;
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    @Override
+    public int getKgEnoughFood() {
+        return kgEnoughFood;
     }
 
     @Override
@@ -37,5 +45,10 @@ public class Fox extends Herbivore {
         canEat.put(Mouse.class, 90);
         canEat.put(Gusin.class, 40);
         canEat.put(Duck.class, 60);
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 }

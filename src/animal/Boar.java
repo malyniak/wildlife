@@ -9,12 +9,15 @@ public class Boar extends Herbivore{
     private final int speed=2;
     private final int kgEnoughFood=50;
     private boolean isAlive=true;
-    private int health=50;
-    Map<Class<?>, Integer> canEat=new HashMap<>();
+    private double health=50;
 
     @Override
     public double getHealth() {
         return health;
+    }
+    @Override
+    public int getKgEnoughFood() {
+        return kgEnoughFood;
     }
 
     @Override
@@ -39,5 +42,10 @@ public class Boar extends Herbivore{
 
     public Boar() {
         initCanEat();
+    }
+
+    @Override
+    public void setHealth(double x) {
+        this.health=x;
     }
 }

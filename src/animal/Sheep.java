@@ -6,11 +6,21 @@ public class Sheep extends Herbivore{
     private final int speed=3;
     private final int kgEnoughFood=15;
     private boolean isAlive=true;
-    private int health=100;
+    private double health=50;
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+
+    @Override
+    public int getKgEnoughFood() {
+        return kgEnoughFood;
     }
 
     @Override
@@ -20,7 +30,7 @@ public class Sheep extends Herbivore{
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
 
     public Sheep() {
@@ -33,5 +43,10 @@ public class Sheep extends Herbivore{
     }
     public void initCanEat(){
         canEat.put(Plant.class, 100);
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 }

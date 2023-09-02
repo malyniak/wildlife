@@ -21,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/src/animal/Gusin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Gusin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Herbivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Mouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Organism.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Plant.java" afterDir="false" />
@@ -46,11 +47,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -108,81 +109,52 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="27" />
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="44" />
+          <line>37</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Herbivore.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="49" />
+          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>12</line>
-          <option name="timeStamp" value="50" />
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="51" />
+          <line>13</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animal/Predator.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="60" />
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="animal.Boa" memberName="health" />
+        <PinnedItemInfo parentTag="animal.Boa" memberName="isAlive" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

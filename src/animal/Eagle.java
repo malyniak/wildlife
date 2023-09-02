@@ -9,11 +9,19 @@ public class Eagle extends Predator {
     private final int speed=3;
     private final int kgEnoughFood=1;
     private boolean isAlive=true;
-    private int health=100;
-    Map<Class<?>, Integer> canEat=new HashMap<>();
+    private double health=50;
     @Override
     public double getHealth() {
-        return 0;
+        return health;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    @Override
+    public int getKgEnoughFood() {
+        return kgEnoughFood;
     }
 
     public Eagle() {
@@ -22,7 +30,12 @@ public class Eagle extends Predator {
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 
     @Override

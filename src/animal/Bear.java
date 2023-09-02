@@ -12,7 +12,7 @@ public class Bear extends Predator{
     private final int speed=2;
     private final int kgEnoughFood=80;
     private int kgFoodEaten=0;
-    private int health=kgFoodEaten/kgEnoughFood*100;
+    private double health=50;
     Location location;
 
 
@@ -23,6 +23,11 @@ public class Bear extends Predator{
 
     public int getWeight() {
         return weight;
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 
     public Bear() {
@@ -57,10 +62,8 @@ public class Bear extends Predator{
         return health;
     }
 
-    @Override
-    public void addHealth(int health) {
-        this.health+=health;
-    }
+
+
 
     public void initCanEat(){
         canEat.put(Boa.class, 80);

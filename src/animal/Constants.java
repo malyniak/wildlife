@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public final class Constants {
+   public static final Location[][] locations=new Location[100][20];
     public static final int MAX_HEALTH=100;
     public static final Location[][] AREA=new InitMenu().getLocation();
     public static final Set<Organism> ORGANISMS=new HashSet<>();

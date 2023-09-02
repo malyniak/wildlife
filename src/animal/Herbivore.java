@@ -1,34 +1,41 @@
 package animal;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Herbivore extends Animal{
     boolean isAlive=true;
+    double health;
     @Override
     public void eat() {
-        Set<Organism> organisms = getLocation().map.keySet();
-        for(Organism organism:organisms) {
-            if(canEat.containsKey(organism)) {
-                if(getHealth()<Constants.MAX_HEALTH) {
-                    addHealth(organism.getWeight());
+        List<Organism> organisms = getLocation().getList();
+        Iterator it=organisms.iterator();
+        while (it.hasNext()) {
+            Organism organism = (Organism) it.next();
+            if(canEat.containsKey(organism.getClass())) {
+                if (getHealth() < Constants.MAX_HEALTH) {
+                    int weight= organism.getWeight();
+                    int kgen=getKgEnoughFood();
+                    double newHealth=getHealth()+(weight*100/kgen);
+                    this.setHealth(newHealth);
+                    System.out.println(getHealth());
                     System.out.println("eagle is eating");
-                    organism.die(this.getLocation());
+                    organism.die(it);
                 }
             }
-
         }
-    }
 
+    }
     @Override
    public void move() {
     }
-    public void die(Location location) {
-        Integer integer = location.map.get(this);
-      location.map.put(this, --integer);
+    public void die(Iterator it) {
+      //  Location location = this.getLocation();
+        it.remove();
+        //    organisms.remove(this);
         isAlive = false;
-        System.out.println("organism is alive");
+        System.out.println("organism is not alive");
+
     }
+    public abstract void setHealth(double x);
 
 }

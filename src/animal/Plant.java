@@ -1,14 +1,21 @@
 package animal;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class Plant extends Organism{
     public  boolean isAlive=true;
     private static final int maxQuantityInLocation = 200;
-    Map<Organism, Integer> canEat=new HashMap<>();
+    double health=0;
     @Override
     public double getHealth() {
+        return health;
+    }
+
+    @Override
+    public int getKgEnoughFood() {
         return 0;
     }
 
@@ -18,19 +25,25 @@ public class Plant extends Organism{
     }
 
     @Override
-    public void die(Location location) {
-        isAlive=false;
+    public void die(Iterator iterator) {
+
     }
+
+
 
 
     @Override
     public int getWeight() {
-        return 0;
+        return 1;
     }
 
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
     }
 
     @Override

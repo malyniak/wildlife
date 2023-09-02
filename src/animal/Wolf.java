@@ -10,9 +10,13 @@ public class Wolf extends Predator{
     private static final int speed=3;
     private static final int kgEnoughFood=8;
     private boolean isAlive=true;
-   public Map<Class<?>, Integer> canEat=new HashMap<>();
     public int getWeight() {
         return weight;
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 
     public int getMaxQuantityInLocation() {
@@ -44,11 +48,7 @@ public class Wolf extends Predator{
         return health;
     }
 
-    public void addHealth(int health) {
-        this.health = health;
-    }
-
-    private int health=100;
+    private double health=50;
 
     public void initCanEat(){
         canEat.put(Horse.class, 10);

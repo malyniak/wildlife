@@ -26,16 +26,12 @@ public class Goat extends Herbivore{
         isAlive = alive;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     private boolean isAlive=true;
-    private int health=100;
+    private double health=50;
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
     }
 
     @Override
@@ -45,9 +41,14 @@ public class Goat extends Herbivore{
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
     public void initCanEat(){
         canEat.put(Plant.class, 100);
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 }

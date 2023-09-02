@@ -14,9 +14,6 @@ public class Boa extends Predator{
         return speed;
     }
 
-    public int getEnoughFood() {
-        return enoughFood;
-    }
 
     public boolean isAlive() {
         return isAlive;
@@ -26,18 +23,21 @@ public class Boa extends Predator{
         isAlive = alive;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
 
     private final int speed=1;
     private final int enoughFood=3;
     private boolean isAlive=true;
-    private int health=100;
+    private double health=50;
+
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
+    }
+
+    @Override
+    public int getKgEnoughFood() {
+        return enoughFood;
     }
 
     public Boa() {
@@ -46,7 +46,12 @@ public class Boa extends Predator{
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
+    }
+
+    @Override
+    public void setHealth(double health) {
+    this.health=health;
     }
 
     public void initCanEat(){

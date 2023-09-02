@@ -6,12 +6,27 @@ public class Buffalo extends Herbivore {
     private final int speed=3;
     private final int kgEnoughFood=100;
     private boolean isAlive=true;
-    private int health=100;
+    private double health=50;
+
+    public int getSpeed() {
+        return speed;
+    }
+
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+
 
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
     }
 
     @Override
@@ -20,7 +35,7 @@ public class Buffalo extends Herbivore {
     }
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
 
     @Override
@@ -31,7 +46,16 @@ public class Buffalo extends Herbivore {
         canEat.put(Gusin.class, 90);
     }
 
+    public int getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+
     public Buffalo() {
         initCanEat();
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 }

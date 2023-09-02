@@ -6,12 +6,21 @@ public class Duck extends Herbivore{
     private final int speed=4;
     private final double kgEnoughFood=0.15;
     private boolean isAlive=true;
-    private int health=100;
+    private double health=50;
 
 
     @Override
     public double getHealth() {
-        return 0;
+        return health;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    @Override
+    public int getKgEnoughFood() {
+        return (int) kgEnoughFood;
     }
 
     @Override
@@ -21,7 +30,7 @@ public class Duck extends Herbivore{
 
     @Override
     public int getWeight() {
-        return 0;
+        return weight;
     }
 
     @Override
@@ -35,5 +44,10 @@ public class Duck extends Herbivore{
 
     public Duck() {
         initCanEat();
+    }
+
+    @Override
+    public void setHealth(double health) {
+        this.health=health;
     }
 }
