@@ -34,6 +34,11 @@ public class Rabbit extends Herbivore{
 
     }
 
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
 
     @Override
     public int getWeight() {

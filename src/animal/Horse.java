@@ -37,6 +37,12 @@ public class Horse extends Herbivore{
     public void generate() {
 
     }
+
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
     @Override
     public int getWeight() {
         return weight;

@@ -32,7 +32,7 @@ public class Bear extends Predator{
 
     public Bear() {
         initCanEat();
-        location=Constants.AREA[x][y];
+
     }
 
     public int getMaxQuantityInLocation() {

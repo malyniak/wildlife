@@ -34,6 +34,11 @@ public class Mouse extends Herbivore{
 
     }
 
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
     public int getWeight() {
         return (int)  weight;
     }

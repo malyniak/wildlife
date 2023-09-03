@@ -31,6 +31,11 @@ public class Fox extends Herbivore {
     }
 
     @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
     public int getWeight() {
         return 0;
     }

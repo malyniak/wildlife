@@ -25,6 +25,11 @@ public class Boar extends Herbivore{
 
     }
 
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
     public int getWeight() {
         return weight;
     }

@@ -25,6 +25,11 @@ public class Plant extends Organism{
     }
 
     @Override
+    public int getSpeed() {
+        return 0;
+    }
+
+    @Override
     public void die(Iterator iterator) {
 
     }
@@ -48,6 +53,11 @@ public class Plant extends Organism{
 
     @Override
     public void eat() {
+
+    }
+
+    @Override
+    public void move() {
 
     }
 

@@ -24,6 +24,11 @@ public class Eagle extends Predator {
         return kgEnoughFood;
     }
 
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
     public Eagle() {
         initCanEat();
     }

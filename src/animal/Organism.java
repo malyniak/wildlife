@@ -12,6 +12,7 @@ public abstract class Organism {
 
 
     public abstract void generate();
+    public abstract   int getSpeed();
 
     public abstract void die(Iterator iterator);
 
@@ -20,6 +21,7 @@ public abstract class Organism {
     public abstract int getMaxQuantityInLocation();
 
     public abstract void eat();
+    public abstract void move();
     public void setLocation(Location location) {
         this.location=location;
     }
