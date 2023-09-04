@@ -3,17 +3,14 @@ public class Bear extends Predator {
     private final int maxQuantityInLocation = 5;
     private final int speed = 2;
     private final int kgEnoughFood = 80;
-    private double health = 50;
+    private double health=50;
     public double getWeight() {
         return weight;
     }
+
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
-    }
-    @Override
-    public void setHealth(double health) {
-        this.health = health;
     }
 
     public Bear() {
@@ -35,14 +32,16 @@ public class Bear extends Predator {
     public int getSpeed() {
         return speed;
     }
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
     @Override
     public double getHealth() {
         return health;
     }
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public void setHealth(double health) {
 
-
+    }
 }
 

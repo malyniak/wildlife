@@ -1,11 +1,10 @@
 import java.util.*;
 
 public abstract class Herbivore extends Animal {
-    double health;
+   private double health=50;
 
     @Override
     public void eat() {
-        Random random = new Random();
         List<Plant> plantsList = getLocation().getPlantsList();
         Iterator iterator = plantsList.iterator();
         while (iterator.hasNext()) {
@@ -20,7 +19,6 @@ public abstract class Herbivore extends Animal {
             }
         }
     }
-
     public abstract void setHealth(double health);
 
 }

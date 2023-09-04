@@ -3,29 +3,8 @@ import java.util.Map;
 import java.util.Random;
 
 public abstract class Animal extends Organism {
-    private boolean willEat=false;
-
-
-
     private Random random = new Random();
-    private Location location;
-
-    @Override
-    public Location getLocation() {
-        return location;
-    }
-
-    @Override
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-    public boolean isWillEat() {
-        return willEat;
-    }
-
-    public void setWillEat(boolean willEat) {
-        this.willEat = willEat;
-    }
+    private double health=50;
 
     public Random getRandom() {
         return random;
@@ -88,8 +67,9 @@ public abstract class Animal extends Organism {
                 countOfThisSpecies++;
 
             if (countOfThisSpecies < getMaxQuantityInLocation() && countOfThisSpecies > 1 && isCanGenerate()) {
-                getLocation().getAnimalList().add(getKinder(animal));
-                animal.setLocation(getLocation());
+                Animal kinder = getKinder(animal);
+                getLocation().getAnimalList().add(kinder);
+                kinder.setLocation(getLocation());
                 setCanGenerate(false);
                 animal.setCanGenerate(false);
 

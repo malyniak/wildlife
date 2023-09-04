@@ -7,6 +7,8 @@ public class Location {
     public Location(int width, int height) {
         this.width = width;
         this.height = height;
+        setListOfAnimals();
+        setPlantsList();
     }
 
     public List<Animal> animalList;

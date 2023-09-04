@@ -2,18 +2,9 @@ import java.util.Iterator;
 
 public abstract class Organism implements Runnable {
     private Location[][] locations;
-    private Island island;
-
-    public Island getIsland() {
-        return island;
-    }
-
-    public void setIsland(Island island) {
-        this.island = island;
-    }
 
     public Location[][] getLocations() {
-        return island.getLocations();
+        return locations;
     }
 
     public void setLocations(Location[][] locations) {

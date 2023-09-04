@@ -6,7 +6,7 @@ public class Plant extends Organism {
     public void generate() {
         if (isCanGenerate() && getLocation().getPlantsList().size() < getMaxQuantityInLocation()) {
             Plant plant = new Plant();
-            plant.setLocation(getLocation());
+          plant.setLocation(getLocation());
             getLocation().getPlantsList().add(plant);
             setCanGenerate(false);
         }

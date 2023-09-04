@@ -5,44 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Duck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Herbivore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Mouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Organism.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Plant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Herbivore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Bear.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Boar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buffalo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Duck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Eagle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Enum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Goat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Gusin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gusin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Herbivore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Horse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/InitMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Mouse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Organism.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Plant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Predator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rabbit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Organism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Predator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rabbit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="devel" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
@@ -120,25 +102,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Predator.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="257" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Predator.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="258" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Predator.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="259" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Island" memberName="width" />

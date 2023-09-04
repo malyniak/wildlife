@@ -33,7 +33,6 @@ public class Rabbit extends Herbivore {
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
     @Override
     public void setHealth(double health) {
         this.health=health;

@@ -16,7 +16,6 @@ public class Horse extends Herbivore {
     public Horse() {
         initCanEat();
     }
-
     public void initCanEat(){
         canEat.put(Plant.class, 100);
     }
@@ -38,7 +37,5 @@ public class Horse extends Herbivore {
     public void setHealth(double health) {
         this.health=health;
     }
-    public void setHealth(int health) {
-        this.health = health;
-    }
+
 }

@@ -1,6 +1,7 @@
 import java.util.*;
 
 public abstract class Predator extends Animal {
+    private double health=50;
     @Override
     public void eat() {
         Random random=new Random();

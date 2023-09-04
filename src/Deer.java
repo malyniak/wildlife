@@ -3,6 +3,7 @@ public class Deer extends Herbivore {
     private final int maxQuantityInLocation=10;
     private final int speed=4;
     private final int kgEnoughFood=50;
+    private double health=50;
     @Override
     public double getHealth() {
         return health;

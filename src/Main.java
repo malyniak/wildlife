@@ -2,14 +2,17 @@
 
 public class Main {
     public static void main(String[] args) {
-        Island island = new Island(100, 20);
-        for(int i=0; i<island.getLocations().length; i++) {
-            for(int j=0; j<island.getLocations()[i].length; j++) {
-                for(Animal animal:island.getLocations()[i][j].animalList) {
-                    animal.setLocation(island.getLocations()[i][j]);
+        Location[][] locations = new Location[100][20];
+        for (int i = 0; i < locations.length; i++) {
+            for (int j = 0; j < locations[i].length; j++) {
+                Location location = new Location(i, j);
+                locations[i][j]=location;
+                for (Animal animal : location.animalList) {
+                    animal.setLocation(location);
                     animal.run();
                 }
             }
         }
+
     }
 }
