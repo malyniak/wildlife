@@ -1,37 +1,21 @@
-package animal;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class Deer extends Herbivore{
+public class Deer extends Herbivore {
     private final int weight=300;
-    private static final int maxQuantityInLocation=10;
+    private final int maxQuantityInLocation=10;
     private final int speed=4;
     private final int kgEnoughFood=50;
-    private boolean isAlive=true;
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-
-
     @Override
     public double getHealth() {
         return health;
     }
-
     @Override
-    public int getKgEnoughFood() {
+    public double getKgEnoughFood() {
         return kgEnoughFood;
     }
-
     public Deer() {
         initCanEat();
     }
-
-    @Override
-    public void generate() {
-
+    public void initCanEat(){
+        canEat.put(Plant.class, 100);
     }
 
     @Override
@@ -40,7 +24,7 @@ public class Deer extends Herbivore{
     }
 
     @Override
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -48,11 +32,6 @@ public class Deer extends Herbivore{
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
-    public void initCanEat(){
-        canEat.put(Plant.class, 100);
-    }
-
     @Override
     public void setHealth(double health) {
         this.health=health;

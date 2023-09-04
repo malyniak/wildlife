@@ -1,8 +1,6 @@
-package animal;
-
 import java.util.*;
-
 public class Location {
+    private  Random random=new Random();
     int width;
     int height;
 
@@ -11,63 +9,73 @@ public class Location {
         this.height = height;
     }
 
-    public List<Organism > list;
-
-    public List<Organism> getList() {
-        return list;
+    public List<Animal> animalList;
+    private List<Plant> plantsList=new ArrayList<>();
+    public List<Plant> getPlantsList() {
+        return plantsList;
     }
 
-    public void addToList (Organism organism) {
-       list.add(organism);
+    public List<Animal> getAnimalList() {
+        return animalList;
     }
 
-    public void setMap() {
-        list = new ArrayList<>();
-        Random random = new Random();
+    public void setListOfAnimals() {
+        animalList = new ArrayList<>();
         Set<Organism> allSpecies = getAllSpecies();
         for (Organism organism : allSpecies) {
             int maxQuantityInLocation = organism.getMaxQuantityInLocation();
            for(int i=0; i<random.nextInt(maxQuantityInLocation); i++) {
                if (organism instanceof Bear) {
-                   list.add(new Bear());
+                   animalList.add(new Bear());
                } else if (organism instanceof Boa) {
-                   list.add(new Boa());
+                   animalList.add(new Boa());
                } else if (organism instanceof Boar) {
-                   list.add(new Boar());
+                   animalList.add(new Boar());
                } else if (organism instanceof Buffalo) {
-                   list.add(new Buffalo());
+                   animalList.add(new Buffalo());
                } else if (organism instanceof Deer) {
-                   list.add(new Deer());
+                   animalList.add(new Deer());
 
                } else if (organism instanceof Duck) {
-                   list.add(new Duck());
+                   animalList.add(new Duck());
                } else if (organism instanceof Eagle) {
-                   list.add(new Eagle());
+                   animalList.add(new Eagle());
                } else if (organism instanceof Fox) {
-                   list.add(new Fox());
+                   animalList.add(new Fox());
                } else if (organism instanceof Goat) {
-                   list.add(new Goat());
+                   animalList.add(new Goat());
                } else if (organism instanceof Gusin) {
-                   list.add(new Gusin());
+                   animalList.add(new Gusin());
                } else if (organism instanceof Horse) {
-                   list.add(new Horse());
+                   animalList.add(new Horse());
                } else if (organism instanceof Mouse) {
-                   list.add(new Mouse());
+                   animalList.add(new Mouse());
                } else if (organism instanceof Plant) {
-                   list.add(new Plant());
-               } else if (organism instanceof Rabbit) {
-                   list.add(new Rabbit());
+                   plantsList.add(new Plant());}
+               else if (organism instanceof Rabbit) {
+                   animalList.add(new Rabbit());
                } else if (organism instanceof Sheep) {
-                   list.add(new Sheep());
+                   animalList.add(new Sheep());
                } else if (organism instanceof Wolf) {
-                   list.add(new Wolf());
+                   animalList.add(new Wolf());
                } else
                    break;
 
            }
         }
 
-
+    }
+    public void setPlantsList() {
+        plantsList = new ArrayList<>();
+        Set<Organism> allSpecies = getAllSpecies();
+        for (Organism organism : allSpecies) {
+         if(organism instanceof Plant) {
+             int maxQuantityInLocation = organism.getMaxQuantityInLocation();
+            for(int i=0; i<random.nextInt(maxQuantityInLocation); i++) {
+                plantsList.add(new Plant());
+            }
+         }
+        }
     }
 
     public Set getAllSpecies() {
@@ -90,5 +98,4 @@ public class Location {
         organisms.add(new Plant());
         return organisms;
     }
-
 }
