@@ -3,24 +3,20 @@ public class Location {
     private  Random random=new Random();
     int width;
     int height;
-
     public Location(int width, int height) {
         this.width = width;
         this.height = height;
         setListOfAnimals();
         setPlantsList();
     }
-
     public List<Animal> animalList;
     private List<Plant> plantsList=new ArrayList<>();
     public List<Plant> getPlantsList() {
         return plantsList;
     }
-
     public List<Animal> getAnimalList() {
         return animalList;
     }
-
     public void setListOfAnimals() {
         animalList = new ArrayList<>();
         Set<Organism> allSpecies = getAllSpecies();
@@ -37,7 +33,6 @@ public class Location {
                    animalList.add(new Buffalo());
                } else if (organism instanceof Deer) {
                    animalList.add(new Deer());
-
                } else if (organism instanceof Duck) {
                    animalList.add(new Duck());
                } else if (organism instanceof Eagle) {
