@@ -1,0 +1,20 @@
+Index: src/LocationInitializer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class LocationInitializer {\r\n    public Location[][] getInitializeLocations(int width, int height) {\r\n        Location[][] locations = new Location[width][height];\r\n        for (int i = 0; i < locations.length; i++) {\r\n            for (int j = 0; j < locations[i].length; j++) {\r\n                Location location = new Location(i, j);\r\n                locations[i][j]=location;\r\n                for (Animal animal : location.animalList) {\r\n                    animal.setLocation(location);\r\n                }\r\n            }\r\n        } return locations;\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/LocationInitializer.java b/src/LocationInitializer.java
+--- a/src/LocationInitializer.java	
++++ b/src/LocationInitializer.java	
+@@ -7,6 +7,11 @@
+                 locations[i][j]=location;
+                 for (Animal animal : location.animalList) {
+                     animal.setLocation(location);
++                    animal.setLocations(locations);
++                }
++                for(Plant plant:location.getPlantsList()) {
++                    plant.setLocation(location);
++                    plant.setLocations(locations);
+                 }
+             }
+         } return locations;

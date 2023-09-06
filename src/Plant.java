@@ -23,6 +23,12 @@ public class Plant extends Organism {
     }
 
     @Override
+    public void die() {
+        getLocation().getPlantsList().remove(this);
+        setAlive(false);
+    }
+
+    @Override
     public void run() {
 
     }

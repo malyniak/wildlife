@@ -18,10 +18,7 @@ public abstract class Organism implements Runnable {
     public abstract double getWeight();
 
     public abstract int getMaxQuantityInLocation();
-    public void die(Iterator it) {
-        it.remove();
-        setAlive(false);
-    }
+    public abstract void die();
     public boolean isCanGenerate() {
         return isCanGenerate;
     }

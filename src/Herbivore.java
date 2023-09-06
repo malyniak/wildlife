@@ -5,17 +5,15 @@ public abstract class Herbivore extends Animal {
 
     @Override
     public void eat() {
+        Random random = new Random();
         List<Plant> plantsList = getLocation().getPlantsList();
-        Iterator iterator = plantsList.iterator();
-        while (iterator.hasNext()) {
-            Plant plant = (Plant) iterator.next();
+            Plant plant = plantsList.get(random.nextInt(plantsList.size()));
             if (canEat.containsKey(plant.getClass())) {
                 if (getHealth() < Constants.MAX_HEALTH) {
                     double newHealth = getHealth() + (plant.getWeight() * 100 / getKgEnoughFood());
                     setHealth(newHealth > Constants.MAX_HEALTH ? Constants.MAX_HEALTH : newHealth);
                     System.out.println(this.getClass().getSimpleName() + " ate " + plant.getClass().getSimpleName());
-                    plant.die(iterator);
-                }
+                    plant.die();
             }
         }
     }

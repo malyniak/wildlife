@@ -1,0 +1,27 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Location[][] locations = new LocationInitializer().getInitializeLocations(100, 20);\r\n        for(int i=0; i<locations.length; i++) {\r\n            for(int j=0; j<locations[i].length; j++) {\r\n                locations[i][j].getAnimalList().forEach(Animal::run);\r\n            }\r\n        }\r\n    }\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	
++++ b/src/Main.java	
+@@ -2,10 +2,10 @@
+ public class Main {
+     public static void main(String[] args) {
+         Location[][] locations = new LocationInitializer().getInitializeLocations(100, 20);
+-        for(int i=0; i<locations.length; i++) {
+-            for(int j=0; j<locations[i].length; j++) {
+-                locations[i][j].getAnimalList().forEach(Animal::run);
+-            }
+-        }
++   //     for(int i=0; i<locations.length; i++) {
++         //   for(int j=0; j<locations[i].length; j++) {
++        //        locations[i][j].getAnimalList().forEach(Animal::run);
++       //     }
++     //   }
+     }
+     }
+\ No newline at end of file

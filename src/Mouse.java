@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class Mouse extends Herbivore {
     private final double weight=0.05;
@@ -23,37 +24,27 @@ public class Mouse extends Herbivore {
         canEat.put(Plant.class, 100);
         canEat.put(Gusin.class, 90);
     }
-    public void run() {}
     public void eat() {
-        List<Plant> plantsList = getLocation().getPlantsList();
-        Iterator iterator=plantsList.iterator();
-        while (iterator.hasNext()) {
-            Plant plant = (Plant) iterator.next();
-            if (canEat.containsKey(plant.getClass())) {
-                if (getHealth() < Constants.MAX_HEALTH) {
-                    double weight = plant.getWeight();
-                    double kgen = getKgEnoughFood();
-                    double newHealth = getHealth() + (weight * 100 / kgen);
-                    this.setHealth(newHealth > 100 ? Constants.MAX_HEALTH : newHealth);
-                    System.out.println(getHealth());
-                    System.out.println("eagle is eating plant");
-                    plant.die(iterator);
-                }
+        Random random=new Random();
+        List<Animal> animalsToEat = randomAnimalsToEat();
+        Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
+        Integer integer = canEat.get(animal.getClass());
+        if(random.nextInt(Constants.PERCENT)<=integer) {
+            if (getHealth() < Constants.MAX_HEALTH) {
+                double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
+                setHealth(newHealth > Constants.MAX_HEALTH ? Constants.MAX_HEALTH : newHealth);
+                System.out.println(this.getClass().getSimpleName() + " ate " + animal.getClass().getSimpleName());
+                animal.die();
             }
         }
-        List<Animal> animalList = getLocation().getAnimalList();
-        for(Animal animal: animalList) {
-            if(canEat.containsKey(animal.getClass())) {
-                if (getHealth() < Constants.MAX_HEALTH) {
-                    double weight = animal.getWeight();
-                    double kgen = getKgEnoughFood();
-                    double newHealth = getHealth() + (weight * 100 / kgen);
-                    this.setHealth(newHealth > 100 ? Constants.MAX_HEALTH : newHealth);
-                    System.out.println(getHealth());
-                    System.out.println("eagle is eating plant");
-                    animal.die(iterator);
-                }
-
+        List<Plant> plantsList = getLocation().getPlantsList();
+        Plant plant = plantsList.get(random.nextInt(plantsList.size()));
+        if (canEat.containsKey(plant.getClass())) {
+            if (getHealth() < Constants.MAX_HEALTH) {
+                double newHealth = getHealth() + (plant.getWeight() * 100 / getKgEnoughFood());
+                setHealth(newHealth > Constants.MAX_HEALTH ? Constants.MAX_HEALTH : newHealth);
+                System.out.println(this.getClass().getSimpleName() + " ate " + plant.getClass().getSimpleName());
+                plant.die();
             }
         }
 

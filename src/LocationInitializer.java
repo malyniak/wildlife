@@ -7,6 +7,11 @@ public class LocationInitializer {
                 locations[i][j]=location;
                 for (Animal animal : location.animalList) {
                     animal.setLocation(location);
+                    animal.setLocations(locations);
+                }
+                for(Plant plant:location.getPlantsList()) {
+                    plant.setLocation(location);
+                    plant.setLocations(locations);
                 }
             }
         } return locations;

@@ -1,10 +1,8 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public abstract class Animal extends Organism {
     private Random random = new Random();
-    private double health=50;
+    private double health = 50;
 
     public Random getRandom() {
         return random;
@@ -19,6 +17,7 @@ public abstract class Animal extends Organism {
     public abstract double getKgEnoughFood();
 
     public abstract int getSpeed();
+
     public Animal getKinder(Animal animal) {
         if (animal instanceof Bear)
             return new Bear();
@@ -52,38 +51,56 @@ public abstract class Animal extends Organism {
             return new Wolf();
         else return null; // must be exception in future
     }
+
     public void move() {
         int speed = getSpeed();
-        int steps = getRandom().nextInt(speed+1);
+        int steps = getRandom().nextInt(speed + 1);
         if (steps > 0) {
             for (int i = 0; i < steps; i++)
                 changeLocation();
+            setHealth(getHealth()-Constants.DECREASE_HEALTH_AFTER_MOVE);
+            System.out.println(getHealth()+" "+ this.getClass().getSimpleName()+ " move on Location"+getLocation().toString());
         }
     }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
     public void generate() {
-        int countOfThisSpecies = 0;
-         for (Animal animal : getLocation().getAnimalList()) {
-            if (animal.getClass().equals(this.getClass()))
-                countOfThisSpecies++;
-
-            if (countOfThisSpecies < getMaxQuantityInLocation() && countOfThisSpecies > 1 && isCanGenerate()) {
-                Animal kinder = getKinder(animal);
-                getLocation().getAnimalList().add(kinder);
-                kinder.setLocation(getLocation());
-                setCanGenerate(false);
-                animal.setCanGenerate(false);
-
-            }
+        List<Animal> animals = animalsToGeneration();
+        if (animals.size() < getMaxQuantityInLocation() && animals.size() > 1 && isCanGenerate()) {
+            Animal animal = animals.get(random.nextInt(animals.size()));
+            Animal child = getKinder(animal);
+            getLocation().getAnimalList().add(child);
+            child.setLocation(getLocation());
+            child.setLocations(getLocations());
+            setCanGenerate(false);
+            animal.setCanGenerate(false);
+            setHealth(getHealth()-Constants.DECREASE_HEALTH_AFTER_GENERATION);
+            System.out.println(this.getClass().getSimpleName()+" hava a child");
         }
+    }
+
+    public List<Animal> animalsToGeneration() {
+        List<Animal> animalsToGeneration = new ArrayList<>();
+        for (Animal animal : getLocation().getAnimalList()) {
+            if (animal.getClass().equals(this.getClass())) {
+                animalsToGeneration.add(animal);
+            }
+
+        } return animalsToGeneration;
     }
 
     public int getCountOfAnimalKind(Location location, Organism organism) {
-        int count=0;
-        for(Animal animal:location.getAnimalList()) {
-            if(organism.getClass().equals(animal.getClass()))
+        int count = 0;
+        for (Animal animal : location.getAnimalList()) {
+            if (organism.getClass().equals(animal.getClass()))
                 count++;
-        } return count;
+        }
+        return count;
     }
+
     public void changeLocation() {
         int height = getLocation().height;
         int width = getLocation().width;
@@ -91,28 +108,28 @@ public abstract class Animal extends Organism {
         switch (direction) {
             case UP:
                 if (height > 0 && getCountOfAnimalKind(getLocations()[width][height - 1], this) < getMaxQuantityInLocation()) {
-                   getLocations()[width][height].animalList.remove(this);
+                    getLocations()[width][height].animalList.remove(this);
                     setLocation(getLocations()[width][--height]);
                     getLocations()[width][height].animalList.add(this);
                 }
                 break;
             case DOWN:
-                if (height < getLocations().length && getCountOfAnimalKind( getLocations()[width][height + 1], this) < getMaxQuantityInLocation()) {
-                   getLocations()[width][height].animalList.remove(this);
+                if (height < getLocations().length && getCountOfAnimalKind(getLocations()[width][height + 1], this) < getMaxQuantityInLocation()) {
+                    getLocations()[width][height].animalList.remove(this);
                     setLocation(getLocations()[width][++height]);
-                   getLocations()[width][height].animalList.add(this);
+                    getLocations()[width][height].animalList.add(this);
                 }
                 break;
             case LEFT:
                 if (width > 0 && getCountOfAnimalKind(getLocations()[width - 1][height], this) < getMaxQuantityInLocation()) {
-                   getLocations()[width][height].animalList.remove(this);
+                    getLocations()[width][height].animalList.remove(this);
                     setLocation(getLocations()[--width][height]);
-                   getLocations()[width][height].animalList.add(this);
+                    getLocations()[width][height].animalList.add(this);
                 }
                 break;
             case RIGHT:
                 if (width < getLocations()[height].length && getCountOfAnimalKind(getLocations()[width + 1][height], this) < getMaxQuantityInLocation()) {
-                   getLocations()[width][height].animalList.remove(this);
+                    getLocations()[width][height].animalList.remove(this);
                     setLocation(getLocations()[++width][height]);
                     getLocations()[width][height].animalList.add(this);
                 }
@@ -121,10 +138,28 @@ public abstract class Animal extends Organism {
                 break;
         }
     }
+    public List<Animal> randomAnimalsToEat() {
+        List<Animal> animals=new ArrayList<>();
+        for(Animal animal:getLocation().getAnimalList()) {
+            if(canEat.containsKey(animal.getClass())) {
+                animals.add(animal);
+            }
+        } return animals;
+    }
+
     public void run() {
-        eat();
+        if (isAlive()) {
+        }
+        while (getHealth() < Constants.MAX_HEALTH) {
+            eat();
+        }
         move();
         generate();
     }
 
+    @Override
+    public void die() {
+        getLocation().getAnimalList().remove(this);
+        setAlive(false);
+    }
 }
