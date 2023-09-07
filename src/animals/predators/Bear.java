@@ -1,3 +1,6 @@
+package animals.predators;
+import animals.herbivores.*;
+
 public class Bear extends Predator {
     private final int weight = 500;
     private final int maxQuantityInLocation = 5;
@@ -18,16 +21,16 @@ public class Bear extends Predator {
     }
 
     public void initCanEat() {
-        canEat.put(Boa.class, 80);
-        canEat.put(Horse.class, 40);
-        canEat.put(Deer.class, 80);
-        canEat.put(Rabbit.class, 80);
-        canEat.put(Mouse.class, 90);
-        canEat.put(Goat.class, 70);
-        canEat.put(Sheep.class, 70);
-        canEat.put(Boar.class, 50);
-        canEat.put(Buffalo.class, 20);
-        canEat.put(Duck.class, 10);
+        getCanEat().put(Boa.class, 80);
+        getCanEat().put(Horse.class, 40);
+        getCanEat().put(Deer.class, 80);
+        getCanEat().put(Rabbit.class, 80);
+        getCanEat().put(Mouse.class, 90);
+        getCanEat().put(Goat.class, 70);
+        getCanEat().put(Sheep.class, 70);
+        getCanEat().put(Boar.class, 50);
+        getCanEat().put(Buffalo.class, 20);
+        getCanEat().put(Duck.class, 10);
     }
     public int getSpeed() {
         return speed;
@@ -38,10 +41,6 @@ public class Bear extends Predator {
     }
     public double getKgEnoughFood() {
         return kgEnoughFood;
-    }
-    @Override
-    public void setHealth(double health) {
-
     }
 }
 

@@ -1,3 +1,7 @@
+package animals.predators;
+
+import animals.herbivores.*;
+
 public class Fox extends Predator {
     private final int weight = 8;
     private final int maxQuantityInLocation = 30;
@@ -10,10 +14,10 @@ public class Fox extends Predator {
     }
 
     public void initCanEat() {
-        canEat.put(Rabbit.class, 70);
-        canEat.put(Mouse.class, 90);
-        canEat.put(Gusin.class, 40);
-        canEat.put(Duck.class, 60);
+        getCanEat().put(Rabbit.class, 70);
+        getCanEat().put(Mouse.class, 90);
+        getCanEat().put(Gusin.class, 40);
+        getCanEat().put(Duck.class, 60);
     }
 
     @Override

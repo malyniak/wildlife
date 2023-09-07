@@ -1,3 +1,7 @@
+package animals.herbivores;
+
+import plant.Plant;
+
 public class Buffalo extends Herbivore {
     private final int weight=700;
     private final int maxQuantityInLocation=10;
@@ -8,7 +12,7 @@ public class Buffalo extends Herbivore {
         initCanEat();
     }
     public void initCanEat() {
-        canEat.put(Plant.class, 90);
+        getCanEat().put(Plant.class, 90);
     }
 
     public int getSpeed() {

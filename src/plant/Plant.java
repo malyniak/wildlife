@@ -1,3 +1,7 @@
+package plant;
+
+import general.Organism;
+
 public class Plant extends Organism {
     private final int weight = 1;
     private final int maxQuantityInLocation = 200;

@@ -1,4 +1,11 @@
+package animals.herbivores;
+
+import animals.Animal;
+import plant.Plant;
+
 import java.util.*;
+
+import static general.Constants.MAX_HEALTH;
 
 public abstract class Herbivore extends Animal {
    private double health=50;
@@ -8,15 +15,14 @@ public abstract class Herbivore extends Animal {
         Random random = new Random();
         List<Plant> plantsList = getLocation().getPlantsList();
             Plant plant = plantsList.get(random.nextInt(plantsList.size()));
-            if (canEat.containsKey(plant.getClass())) {
-                if (getHealth() < Constants.MAX_HEALTH) {
+            if (getCanEat().containsKey(plant.getClass())) {
+                if (getHealth() < MAX_HEALTH) {
                     double newHealth = getHealth() + (plant.getWeight() * 100 / getKgEnoughFood());
-                    setHealth(newHealth > Constants.MAX_HEALTH ? Constants.MAX_HEALTH : newHealth);
-                    System.out.println(this.getClass().getSimpleName() + " ate " + plant.getClass().getSimpleName());
+                    setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+                    System.out.println(getClass().getSimpleName() + " ate " + plant.getClass().getSimpleName());
                     plant.die();
             }
         }
     }
-    public abstract void setHealth(double health);
 
 }

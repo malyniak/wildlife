@@ -1,8 +1,12 @@
-public class Horse extends Herbivore {
-    private final int weight=400;
-    private final int maxQuantityInLocation=20;
-    private final int speed=3;
-    private final int kgEnoughFood=1;
+package animals.herbivores;
+
+import plant.Plant;
+
+public class Deer extends Herbivore {
+    private final int weight=300;
+    private final int maxQuantityInLocation=10;
+    private final int speed=4;
+    private final int kgEnoughFood=50;
     private double health=50;
     @Override
     public double getHealth() {
@@ -12,12 +16,11 @@ public class Horse extends Herbivore {
     public double getKgEnoughFood() {
         return kgEnoughFood;
     }
-
-    public Horse() {
+    public Deer() {
         initCanEat();
     }
     public void initCanEat(){
-        canEat.put(Plant.class, 100);
+        getCanEat().put(Plant.class, 100);
     }
 
     @Override
@@ -29,6 +32,7 @@ public class Horse extends Herbivore {
     public double getWeight() {
         return weight;
     }
+
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
@@ -37,5 +41,4 @@ public class Horse extends Herbivore {
     public void setHealth(double health) {
         this.health=health;
     }
-
 }

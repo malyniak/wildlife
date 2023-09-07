@@ -1,3 +1,6 @@
+package animals.herbivores;
+
+import plant.Plant;
 public class Goat extends Herbivore {
     private final int weight=60;
     private final int maxQuantityInLocation=140;
@@ -8,7 +11,7 @@ public class Goat extends Herbivore {
         initCanEat();
     }
     public void initCanEat(){
-        canEat.put(Plant.class, 100);
+        getCanEat().put(Plant.class, 100);
     }
 
     public int getMaxQuantityInLocation() {
@@ -32,8 +35,4 @@ public class Goat extends Herbivore {
         return weight;
     }
 
-    @Override
-    public void setHealth(double health) {
-        this.health=health;
-    }
 }

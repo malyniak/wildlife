@@ -1,3 +1,7 @@
+package animals.predators;
+
+import animals.herbivores.*;
+
 public class Boa extends Predator {
     private final int weight=15;
     private final int maxQuantityInLocation=30;
@@ -9,10 +13,10 @@ public class Boa extends Predator {
         initCanEat();
     }
     public void initCanEat(){
-        canEat.put(Fox.class, 15);
-        canEat.put(Rabbit.class, 20);
-        canEat.put(Mouse.class, 40);
-        canEat.put(Duck.class, 10);
+        getCanEat().put(Fox.class, 15);
+        getCanEat().put(Rabbit.class, 20);
+        getCanEat().put(Mouse.class, 40);
+        getCanEat().put(Duck.class, 10);
     }
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
@@ -37,9 +41,5 @@ public class Boa extends Predator {
         return weight;
     }
 
-    @Override
-    public void setHealth(double health) {
-    this.health=health;
-    }
 
 }

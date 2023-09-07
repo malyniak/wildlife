@@ -1,4 +1,4 @@
-import java.util.Iterator;
+package general;
 
 public abstract class Organism implements Runnable {
     private Location[][] locations;

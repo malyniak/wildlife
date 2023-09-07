@@ -1,14 +1,21 @@
-public class Sheep extends Herbivore {
-    private final int weight=70;
-    private final int maxQuantityInLocation=140;
+package animals.predators;
+
+import animals.herbivores.*;
+
+public class Eagle extends Predator {
+    private final int weight=6;
+    private final int maxQuantityInLocation=20;
     private final int speed=3;
-    private final int kgEnoughFood=15;
+    private final int kgEnoughFood=1;
     private double health=50;
-    public Sheep() {
+    public Eagle() {
         initCanEat();
     }
-    public void initCanEat(){
-        canEat.put(Plant.class, 100);
+    public void initCanEat() {
+        getCanEat().put(Fox.class, 10);
+        getCanEat().put(Rabbit.class, 90);
+        getCanEat().put(Mouse.class, 90);
+        getCanEat().put(Duck.class, 80);
     }
     @Override
     public double getHealth() {
@@ -26,13 +33,9 @@ public class Sheep extends Herbivore {
     public double getWeight() {
         return weight;
     }
-
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-    @Override
-    public void setHealth(double health) {
-        this.health=health;
-    }
+
 }

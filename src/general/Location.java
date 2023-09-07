@@ -1,8 +1,25 @@
+package general;
+
+import animals.Animal;
+import animals.herbivores.*;
+import animals.predators.*;
+import general.Organism;
+import plant.Plant;
+
 import java.util.*;
 public class Location {
     private  Random random=new Random();
     int width;
     int height;
+
+    @Override
+    public String toString() {
+        return "general.Location{" +
+                "width=" + width +
+                ", height=" + height +
+                '}';
+    }
+
     public Location(int width, int height) {
         this.width = width;
         this.height = height;
@@ -73,6 +90,22 @@ public class Location {
             }
          }
         }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public Set getAllSpecies() {

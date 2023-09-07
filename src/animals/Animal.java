@@ -1,3 +1,13 @@
+package animals;
+
+import animals.herbivores.*;
+import animals.predators.*;
+import general.Constants;
+import general.Direction;
+import general.Location;
+import general.Organism;
+
+
 import java.util.*;
 
 public abstract class Animal extends Organism {
@@ -8,9 +18,13 @@ public abstract class Animal extends Organism {
         return random;
     }
 
-    Map<Class<?>, Integer> canEat = new HashMap<>();
+    private Map<Class<?>, Integer> canEat = new HashMap<>();
 
     public abstract void eat();
+
+    public Map<Class<?>, Integer> getCanEat() {
+        return canEat;
+    }
 
     public abstract double getHealth();
 
@@ -58,8 +72,8 @@ public abstract class Animal extends Organism {
         if (steps > 0) {
             for (int i = 0; i < steps; i++)
                 changeLocation();
-            setHealth(getHealth()-Constants.DECREASE_HEALTH_AFTER_MOVE);
-            System.out.println(getHealth()+" "+ this.getClass().getSimpleName()+ " move on Location"+getLocation().toString());
+            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_MOVE);
+            System.out.println(this.getClass().getSimpleName() + " move on general.Location" + getLocation().toString());
         }
     }
 
@@ -77,8 +91,8 @@ public abstract class Animal extends Organism {
             child.setLocations(getLocations());
             setCanGenerate(false);
             animal.setCanGenerate(false);
-            setHealth(getHealth()-Constants.DECREASE_HEALTH_AFTER_GENERATION);
-            System.out.println(this.getClass().getSimpleName()+" hava a child");
+            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_GENERATION);
+            System.out.println(this.getClass().getSimpleName() + " hava a child");
         }
     }
 
@@ -89,7 +103,8 @@ public abstract class Animal extends Organism {
                 animalsToGeneration.add(animal);
             }
 
-        } return animalsToGeneration;
+        }
+        return animalsToGeneration;
     }
 
     public int getCountOfAnimalKind(Location location, Organism organism) {
@@ -102,8 +117,8 @@ public abstract class Animal extends Organism {
     }
 
     public void changeLocation() {
-        int height = getLocation().height;
-        int width = getLocation().width;
+        int height = getLocation().getHeight();
+        int width = getLocation().getWidth();
         Direction direction = Direction.values()[getRandom().nextInt(Direction.values().length)];
         switch (direction) {
             case UP:
@@ -138,28 +153,36 @@ public abstract class Animal extends Organism {
                 break;
         }
     }
+
     public List<Animal> randomAnimalsToEat() {
-        List<Animal> animals=new ArrayList<>();
-        for(Animal animal:getLocation().getAnimalList()) {
-            if(canEat.containsKey(animal.getClass())) {
+        List<Animal> animals = new ArrayList<>();
+        for (Animal animal : getLocation().getAnimalList()) {
+            if (canEat.containsKey(animal.getClass())) {
                 animals.add(animal);
             }
-        } return animals;
+        }
+        return animals;
     }
 
     public void run() {
-        if (isAlive()) {
+        while (!Thread.currentThread().isInterrupted()) {
+            while (getHealth() < Constants.MAX_HEALTH) {
+                eat();
+            }
+            move();
+            generate();
+            if (!isAlive())
+                Thread.currentThread().interrupt();
+            //  System.out.println(getLocation().getAnimalList().size());
+            //   System.out.println(getLocation().getPlantsList().size());
+
         }
-        while (getHealth() < Constants.MAX_HEALTH) {
-            eat();
-        }
-        move();
-        generate();
     }
 
     @Override
     public void die() {
         getLocation().getAnimalList().remove(this);
         setAlive(false);
+        Thread.currentThread().interrupt();
     }
 }

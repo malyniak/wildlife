@@ -1,3 +1,9 @@
+package general;
+
+import animals.Animal;
+import general.Location;
+import plant.Plant;
+
 public class LocationInitializer {
     public Location[][] getInitializeLocations(int width, int height) {
         Location[][] locations = new Location[width][height];
