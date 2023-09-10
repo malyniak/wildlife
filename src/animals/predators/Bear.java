@@ -2,6 +2,7 @@ package animals.predators;
 import animals.herbivores.*;
 
 public class Bear extends Predator {
+    private final String view= "\uD83D\uDC3B";
     private final int weight = 500;
     private final int maxQuantityInLocation = 5;
     private final int speed = 2;
@@ -41,6 +42,9 @@ public class Bear extends Predator {
     }
     public double getKgEnoughFood() {
         return kgEnoughFood;
+    }
+    public String getView() {
+        return view;
     }
 }
 

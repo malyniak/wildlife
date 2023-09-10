@@ -1,8 +1,8 @@
 package animals.herbivores;
-import plant.Plant;
-
+import plant.*;
 
 public class Sheep extends Herbivore {
+    private final String view= "\uD83D\uDC11";
     private final int weight = 70;
     private final int maxQuantityInLocation = 140;
     private final int speed = 3;
@@ -40,5 +40,8 @@ public class Sheep extends Herbivore {
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
+    }
+    public String getView() {
+        return view;
     }
 }

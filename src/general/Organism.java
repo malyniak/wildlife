@@ -1,14 +1,14 @@
 package general;
 
 public abstract class Organism implements Runnable {
-    private Location[][] locations;
+    private Location[][] island;
 
-    public Location[][] getLocations() {
-        return locations;
+    public Location[][] getIsland() {
+        return island;
     }
 
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    public void setIsland(Location[][] island) {
+        this.island = island;
     }
 
     private Location location;
@@ -16,9 +16,8 @@ public abstract class Organism implements Runnable {
     private boolean isAlive=true;
     public abstract void generate();
     public abstract double getWeight();
-
-    public abstract int getMaxQuantityInLocation();
     public abstract void die();
+    public abstract String getView();
     public boolean isCanGenerate() {
         return isCanGenerate;
     }

@@ -1,24 +1,16 @@
 package general;
 
-import animals.Animal;
+import animals.*;
 import animals.herbivores.*;
 import animals.predators.*;
-import general.Organism;
-import plant.Plant;
+import plant.*;
 
 import java.util.*;
+
 public class Location {
-    private  Random random=new Random();
+    private Random random = new Random();
     int width;
     int height;
-
-    @Override
-    public String toString() {
-        return "general.Location{" +
-                "width=" + width +
-                ", height=" + height +
-                '}';
-    }
 
     public Location(int width, int height) {
         this.width = width;
@@ -26,69 +18,65 @@ public class Location {
         setListOfAnimals();
         setPlantsList();
     }
+
     public List<Animal> animalList;
-    private List<Plant> plantsList=new ArrayList<>();
+    private List<Plant> plantsList = new ArrayList<>();
+
     public List<Plant> getPlantsList() {
         return plantsList;
     }
+
     public List<Animal> getAnimalList() {
         return animalList;
     }
+
     public void setListOfAnimals() {
         animalList = new ArrayList<>();
-        Set<Organism> allSpecies = getAllSpecies();
-        for (Organism organism : allSpecies) {
-            int maxQuantityInLocation = organism.getMaxQuantityInLocation();
-           for(int i=0; i<random.nextInt(maxQuantityInLocation); i++) {
-               if (organism instanceof Bear) {
-                   animalList.add(new Bear());
-               } else if (organism instanceof Boa) {
-                   animalList.add(new Boa());
-               } else if (organism instanceof Boar) {
-                   animalList.add(new Boar());
-               } else if (organism instanceof Buffalo) {
-                   animalList.add(new Buffalo());
-               } else if (organism instanceof Deer) {
-                   animalList.add(new Deer());
-               } else if (organism instanceof Duck) {
-                   animalList.add(new Duck());
-               } else if (organism instanceof Eagle) {
-                   animalList.add(new Eagle());
-               } else if (organism instanceof Fox) {
-                   animalList.add(new Fox());
-               } else if (organism instanceof Goat) {
-                   animalList.add(new Goat());
-               } else if (organism instanceof Gusin) {
-                   animalList.add(new Gusin());
-               } else if (organism instanceof Horse) {
-                   animalList.add(new Horse());
-               } else if (organism instanceof Mouse) {
-                   animalList.add(new Mouse());
-               } else if (organism instanceof Plant) {
-                   plantsList.add(new Plant());}
-               else if (organism instanceof Rabbit) {
-                   animalList.add(new Rabbit());
-               } else if (organism instanceof Sheep) {
-                   animalList.add(new Sheep());
-               } else if (organism instanceof Wolf) {
-                   animalList.add(new Wolf());
-               } else
-                   break;
+        Set<Animal> allSpecies = getAllSpecies();
+        for (Animal animal : allSpecies) {
+            int maxQuantityInLocation = animal.getMaxQuantityInLocation();
+            for (int i = 0; i < random.nextInt(maxQuantityInLocation + 1); i++) {
+                if (animal.getClass()==Bear.class) {
+                    animalList.add(new Bear());
+                } else if (animal.getClass()==Boa.class) {
+                    animalList.add(new Boa());
+                } else if (animal.getClass()==Boar.class) {
+                    animalList.add(new Boar());
+                } else if (animal.getClass()==Buffalo.class) {
+                    animalList.add(new Buffalo());
+                } else if (animal.getClass()==Deer.class) {
+                    animalList.add(new Deer());
+                } else if (animal.getClass()==Duck.class) {
+                    animalList.add(new Duck());
+                } else if (animal.getClass()==Eagle.class) {
+                    animalList.add(new Eagle());
+                } else if (animal.getClass()==Fox.class) {
+                    animalList.add(new Fox());
+                } else if (animal.getClass()==Goat.class) {
+                    animalList.add(new Goat());
+                } else if (animal.getClass()==Gusin.class) {
+                    animalList.add(new Gusin());
+                } else if (animal.getClass()==Horse.class) {
+                    animalList.add(new Horse());
+                } else if (animal.getClass()==Mouse.class) {
+                    animalList.add(new Mouse());
+                } else if (animal.getClass()==Rabbit.class) {
+                    animalList.add(new Rabbit());
+                } else if (animal.getClass()==Sheep.class) {
+                    animalList.add(new Sheep());
+                } else if (animal.getClass()==Wolf.class) {
+                    animalList.add(new Wolf());
+                } else
+                    break;
 
-           }
+            }
         }
 
     }
     public void setPlantsList() {
         plantsList = new ArrayList<>();
-        Set<Organism> allSpecies = getAllSpecies();
-        for (Organism organism : allSpecies) {
-         if(organism instanceof Plant) {
-             int maxQuantityInLocation = organism.getMaxQuantityInLocation();
-            for(int i=0; i<random.nextInt(maxQuantityInLocation); i++) {
-                plantsList.add(new Plant());
-            }
-         }
+                for (int i = 0; i < random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
+                    plantsList.add(new Plant());
         }
     }
 
@@ -109,23 +97,30 @@ public class Location {
     }
 
     public Set getAllSpecies() {
-        HashSet<Organism> organisms = new HashSet<>();
-        organisms.add(new Wolf());
-        organisms.add(new Boa());
-        organisms.add(new Fox());
-        organisms.add(new Bear());
-        organisms.add(new Eagle());
-        organisms.add(new Horse());
-        organisms.add(new Deer());
-        organisms.add(new Rabbit());
-        organisms.add(new Mouse());
-        organisms.add(new Goat());
-        organisms.add(new Sheep());
-        organisms.add(new Boar());
-        organisms.add(new Buffalo());
-        organisms.add(new Duck());
-        organisms.add(new Gusin());
-        organisms.add(new Plant());
-        return organisms;
+        HashSet<Animal> animals = new HashSet<>();
+        animals.add(new Wolf());
+        animals.add(new Boa());
+        animals.add(new Fox());
+        animals.add(new Bear());
+        animals.add(new Eagle());
+        animals.add(new Horse());
+        animals.add(new Deer());
+        animals.add(new Rabbit());
+        animals.add(new Mouse());
+        animals.add(new Goat());
+        animals.add(new Sheep());
+        animals.add(new Boar());
+        animals.add(new Buffalo());
+        animals.add(new Duck());
+        animals.add(new Gusin());
+        return animals;
+    }
+
+    @Override
+    public String toString() {
+        return "Location {" +
+                "width=" + width +
+                ", height=" + height +
+                '}';
     }
 }

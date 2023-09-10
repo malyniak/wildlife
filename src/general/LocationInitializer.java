@@ -1,26 +1,25 @@
 package general;
 
 import animals.Animal;
-import general.Location;
-import plant.Plant;
+import plant.*;
 
 public class LocationInitializer {
     public Location[][] getInitializeLocations(int width, int height) {
-        Location[][] locations = new Location[width][height];
-        for (int i = 0; i < locations.length; i++) {
-            for (int j = 0; j < locations[i].length; j++) {
+        Location[][] island = new Location[width][height];
+        for (int i = 0; i < island.length; i++) {
+            for (int j = 0; j < island[i].length; j++) {
                 Location location = new Location(i, j);
-                locations[i][j]=location;
+                island[i][j]=location;
                 for (Animal animal : location.animalList) {
                     animal.setLocation(location);
-                    animal.setLocations(locations);
+                    animal.setIsland(island);
                 }
                 for(Plant plant:location.getPlantsList()) {
                     plant.setLocation(location);
-                    plant.setLocations(locations);
+                    plant.setIsland(island);
                 }
             }
-        } return locations;
+        } return island;
 
     }
 }

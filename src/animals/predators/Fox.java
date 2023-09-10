@@ -3,6 +3,7 @@ package animals.predators;
 import animals.herbivores.*;
 
 public class Fox extends Predator {
+    private final String view= "\uD83E\uDD8A";
     private final int weight = 8;
     private final int maxQuantityInLocation = 30;
     private final int speed = 2;
@@ -44,8 +45,7 @@ public class Fox extends Predator {
         return maxQuantityInLocation;
     }
 
-    @Override
-    public void setHealth(double health) {
-        this.health=health;
+    public String getView() {
+        return view;
     }
 }

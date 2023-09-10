@@ -1,17 +1,14 @@
 package animals.predators;
 
-import animals.Animal;
-
+import animals.*;
 import java.util.*;
+import static general.Constants.*;
 
-import static general.Constants.MAX_HEALTH;
-import static general.Constants.PERCENT;
-
-public abstract class Predator extends Animal {
+public abstract class Predator extends Animal implements EatAnimal {
     private double health = 50;
 
     @Override
-    public void eat() {
+    public void eatAnimal() {
         Random random = new Random();
         List<Animal> animalsToEat = randomAnimalsToEat();
         Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
@@ -19,10 +16,21 @@ public abstract class Predator extends Animal {
             if (getHealth() < MAX_HEALTH) {
                 double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                System.out.println(getClass().getSimpleName() + " ate " + animal.getClass().getSimpleName());
+                System.out.println(getView() + " ate " + animal.getView());
                 animal.die();
             }
         }
+    }
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            while (getHealth() < MAX_HEALTH) {
+            eatAnimal();
+            }
+            move();
+            generate();
+            if (!isAlive())
+                Thread.currentThread().interrupt();
 
+        }
     }
 }

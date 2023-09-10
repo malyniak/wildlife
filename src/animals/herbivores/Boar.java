@@ -1,16 +1,12 @@
 package animals.herbivores;
 
-import animals.Animal;
-import general.Constants;
-import plant.Plant;
+import animals.*;
+import plant.*;
+import java.util.*;
+import static general.Constants.*;
 
-import java.util.List;
-import java.util.Random;
-
-import static general.Constants.MAX_HEALTH;
-import static general.Constants.PERCENT;
-
-public class Boar extends Herbivore {
+public class Boar extends Herbivore implements EatAnimal {
+    private final String view= "\uD83D\uDC17";
     private final int weight = 400;
     private final int maxQuantityInLocation = 50;
     private final int speed = 2;
@@ -46,7 +42,15 @@ public class Boar extends Herbivore {
         return weight;
     }
 
-    public void eat() {
+    public String getView() {
+        return view;
+    }
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    @Override
+    public void eatAnimal() {
         Random random = new Random();
         List<Animal> animalsToEat = randomAnimalsToEat();
         Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
@@ -54,30 +58,21 @@ public class Boar extends Herbivore {
             if (getHealth() < MAX_HEALTH) {
                 double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                System.out.println(this.getClass().getSimpleName() + " ate " + animal.getClass().getSimpleName());
+                System.out.println(getView() + " ate " + animal.getView());
                 animal.die();
-            }
-        } else {
-            List<Plant> plantsList = getLocation().getPlantsList();
-            Plant plant = plantsList.get(random.nextInt(plantsList.size()));
-            if (getCanEat().containsKey(plant.getClass())) {
-                if (getHealth() < MAX_HEALTH) {
-                    double newHealth = getHealth() + (plant.getWeight() * 100 / getKgEnoughFood());
-                    setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                    System.out.println(this.getClass().getSimpleName() + " ate " + plant.getClass().getSimpleName());
-                    plant.die();
-                }
             }
         }
     }
-
-    @Override
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-
-    @Override
-    public void setHealth(double health) {
-        this.health = health;
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            while (getHealth() < MAX_HEALTH) {
+                eatPlant();
+                eatAnimal();
+            }
+            move();
+            generate();
+            if (!isAlive())
+                Thread.currentThread().interrupt();
+        }
     }
 }

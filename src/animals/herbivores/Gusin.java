@@ -1,8 +1,9 @@
 package animals.herbivores;
 
-import plant.Plant;
+import plant.*;
 
 public class Gusin extends Herbivore {
+    private final String view= "\uD83D\uDC1B";
     private final double weight=0.01;
     private final int maxQuantityInLocation=1000;
     private final int speed=0;
@@ -34,9 +35,8 @@ public class Gusin extends Herbivore {
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-    @Override
-    public void setHealth(double health) {
-        this.health=health;
+    public String getView() {
+        return view;
     }
 
 }

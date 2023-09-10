@@ -3,6 +3,7 @@ package animals.predators;
 import animals.herbivores.*;
 
 public class Eagle extends Predator {
+    private final String view= "\uD83E\uDD85";
     private final int weight=6;
     private final int maxQuantityInLocation=20;
     private final int speed=3;
@@ -38,4 +39,7 @@ public class Eagle extends Predator {
         return maxQuantityInLocation;
     }
 
+    public String getView() {
+        return view;
+    }
 }
