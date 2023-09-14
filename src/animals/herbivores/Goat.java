@@ -11,18 +11,19 @@ public class Goat extends Herbivore {
     public Goat() {
         initCanEat();
     }
-    public void initCanEat(){
-        getCanEat().put(Plant.class, 100);
+    public String getView() {
+        return view;
     }
-
+    @Override
+    public double getWeight() {
+        return weight;
+    }
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
     public int getSpeed() {
         return speed;
     }
-
     public double getKgEnoughFood() {
         return kgEnoughFood;
     }
@@ -30,12 +31,17 @@ public class Goat extends Herbivore {
     public double getHealth() {
         return health;
     }
-    @Override
-    public double getWeight() {
-        return weight;
+    public void initCanEat(){
+        getCanEat().put(Plant.class, 100);
     }
-    public String getView() {
-        return view;
-    }
+
+
+
+
+
+
+
+
+
 
 }

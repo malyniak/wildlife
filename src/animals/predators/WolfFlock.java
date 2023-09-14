@@ -16,34 +16,26 @@ public class WolfFlock {
 
     public WolfFlock(List<Wolf> wolves) {
         this.wolves = wolves;
-
+    }
+    public String getView() {
+        return view;
     }
     public List<Wolf> getWolves() {
         return wolves;
     }
-
-    public void setWolves(List<Wolf> wolves) {
-        this.wolves = wolves;
-    }
-
-    public String getView() {
-        return view;
-    }
-
     public Map<Class<?>, Integer> getCanEat() {
-
         return canEat;
     }
     public void eat() {
         Random random = new Random();
-        for (Animal animal : wolves.get(0).getLocation().animalList) {
+        for (Animal animal : wolves.get(0).getLocation().getAnimalList()) {
             while (wolves.size() > MIN_COUNT_FOR_WOLF_FLOCK) {
                 if (animal.getClass() != Wolf.class) {
                     double animalWeight = animal.getWeight();
                     System.out.println(getView() + " ate " + animal.getView());
                     animal.die();
                     for (Wolf wolf : wolves) {
-                        double newHealth = wolf.getHealth() + animalWeight / wolves.size() * 100 / wolf.getKgEnoughFood();
+                        double newHealth = wolf.getHealth() + animalWeight / wolves.size() * PERCENT / wolf.getKgEnoughFood();
                         wolf.setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
                         if (random.nextInt(PERCENT + 1) < PROBABILITY_DEATH_WOLF_AT_FLOCK)
                             wolf.die();

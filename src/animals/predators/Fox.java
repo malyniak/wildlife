@@ -14,6 +14,29 @@ public class Fox extends Predator {
         initCanEat();
     }
 
+    public String getView() {
+        return view;
+    }
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
     public void initCanEat() {
         getCanEat().put(Rabbit.class, 70);
         getCanEat().put(Mouse.class, 90);
@@ -21,31 +44,10 @@ public class Fox extends Predator {
         getCanEat().put(Duck.class, 60);
     }
 
-    @Override
-    public double getHealth() {
-        return health;
-    }
-    @Override
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
 
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
 
-    @Override
-    public double getWeight() {
-        return weight;
-    }
 
-    @Override
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
 
-    public String getView() {
-        return view;
-    }
+
+
 }

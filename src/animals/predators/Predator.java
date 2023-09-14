@@ -6,7 +6,6 @@ import static general.Constants.*;
 
 public abstract class Predator extends Animal implements EatAnimal {
     private double health = 50;
-
     @Override
     public void eatAnimal() {
         Random random = new Random();

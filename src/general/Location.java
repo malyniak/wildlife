@@ -11,26 +11,35 @@ public class Location {
     private Random random = new Random();
     int width;
     int height;
+    private List<Animal> animalList;
+    private List<Plant> plantsList;
 
     public Location(int width, int height) {
         this.width = width;
         this.height = height;
-        setListOfAnimals();
+        setAnimalList();
         setPlantsList();
     }
+    public int getWidth() {
+        return width;
+    }
 
-    public List<Animal> animalList;
-    private List<Plant> plantsList = new ArrayList<>();
+    public void setWidth(int width) {
+        this.width = width;
+    }
+    public int getHeight() {
+        return height;
+    }
 
-    public List<Plant> getPlantsList() {
-        return plantsList;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public List<Animal> getAnimalList() {
         return animalList;
     }
 
-    public void setListOfAnimals() {
+    public void setAnimalList() {
         animalList = new ArrayList<>();
         Set<Animal> allSpecies = getAllSpecies();
         for (Animal animal : allSpecies) {
@@ -73,30 +82,16 @@ public class Location {
         }
 
     }
+    public List<Plant> getPlantsList() {
+        return plantsList;
+    }
     public void setPlantsList() {
         plantsList = new ArrayList<>();
                 for (int i = 0; i < random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
                     plantsList.add(new Plant());
         }
     }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public Set getAllSpecies() {
+    public Set<Animal> getAllSpecies() {
         HashSet<Animal> animals = new HashSet<>();
         animals.add(new Wolf());
         animals.add(new Boa());
@@ -118,9 +113,11 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location {" +
+        return "Location{" +
                 "width=" + width +
                 ", height=" + height +
+                ", animalList size=" + animalList.size() +
+                ", plantsList size=" + plantsList.size() +
                 '}';
     }
 }

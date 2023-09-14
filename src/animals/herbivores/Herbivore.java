@@ -14,7 +14,7 @@ public abstract class Herbivore extends Animal implements EatPlant {
         Plant plant = plantsList.get(random.nextInt(plantsList.size()));
         if (getCanEat().containsKey(plant.getClass())) {
             if (getHealth() < MAX_HEALTH) {
-                double newHealth = getHealth() + (plant.getWeight() * 100 / getKgEnoughFood());
+                double newHealth = getHealth() + (plant.getWeight() * PERCENT / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
                 System.out.println(getView() + " ate " + plant.getView());
                 plant.die();

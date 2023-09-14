@@ -20,7 +20,33 @@ public class Wolf extends Predator {
     public Wolf() {
         initCanEat();
     }
-
+    public String getView() {
+        return view;
+    }
+    public double getWeight() {
+        return weight;
+    }
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
+    public List<Wolf> getWolvesAtLocation() {
+        wolvesAtLocation = new ArrayList<>();
+        for (Animal animal : getLocation().getAnimalList()) {
+            if (animal instanceof Wolf)
+                wolvesAtLocation.add((Wolf) animal);
+        }
+        return wolvesAtLocation;
+    }
     public void initCanEat() {
         getCanEat().put(Horse.class, 10);
         getCanEat().put(Deer.class, 15);
@@ -31,39 +57,6 @@ public class Wolf extends Predator {
         getCanEat().put(Boar.class, 15);
         getCanEat().put(Buffalo.class, 10);
         getCanEat().put(Duck.class, 40);
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-
-    @Override
-    public double getHealth() {
-        return health;
-    }
-
-    public String getView() {
-        return view;
-    }
-    public List<Wolf> getWolvesAtLocation() {
-        wolvesAtLocation = new ArrayList<>();
-        for (Animal animal : getLocation().animalList) {
-            if (animal instanceof Wolf)
-                wolvesAtLocation.add((Wolf) animal);
-        }
-        return wolvesAtLocation;
     }
 
     public void eatAnimal() {

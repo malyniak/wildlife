@@ -8,37 +8,42 @@ public class Deer extends Herbivore {
     private final int speed=4;
     private final int kgEnoughFood=50;
     private double health=50;
+    public Deer() {
+        initCanEat();
+    }
     @Override
-    public double getHealth() {
-        return health;
+    public String getView() {
+        return view;
+    }
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
     }
     @Override
     public double getKgEnoughFood() {
         return kgEnoughFood;
     }
-    public Deer() {
-        initCanEat();
+    @Override
+    public double getHealth() {
+        return health;
     }
     public void initCanEat(){
         getCanEat().put(Plant.class, 100);
     }
 
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
 
-    @Override
-    public double getWeight() {
-        return weight;
-    }
 
-    @Override
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-    public String getView() {
-        return view;
-    }
+
+
+
+
 
 }

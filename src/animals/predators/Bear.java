@@ -8,19 +8,29 @@ public class Bear extends Predator {
     private final int speed = 2;
     private final int kgEnoughFood = 80;
     private double health=50;
+    public Bear() {
+        initCanEat();
+    }
+    public String getView() {
+        return view;
+    }
     public double getWeight() {
         return weight;
     }
-
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
-    public Bear() {
-        initCanEat();
+    public int getSpeed() {
+        return speed;
     }
-
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
     public void initCanEat() {
         getCanEat().put(Boa.class, 80);
         getCanEat().put(Horse.class, 40);
@@ -33,18 +43,9 @@ public class Bear extends Predator {
         getCanEat().put(Buffalo.class, 20);
         getCanEat().put(Duck.class, 10);
     }
-    public int getSpeed() {
-        return speed;
-    }
-    @Override
-    public double getHealth() {
-        return health;
-    }
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-    public String getView() {
-        return view;
-    }
+
+
+
+
 }
 

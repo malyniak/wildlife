@@ -2,30 +2,60 @@ package animals;
 
 import animals.herbivores.*;
 import animals.predators.*;
+import exceptions.ClassNotAnimal;
 import general.*;
 import java.util.*;
+import static general.Constants.*;
 
 public abstract class Animal extends Organism {
     private Random random = new Random();
+    private Location[][] island;
+    private Location location;
     private double health = 50;
-
-    public Random getRandom() {
-        return random;
+    private boolean isCanGenerate=true;
+    private boolean isAlive=true;
+    private Map<Class<?>, Integer> canEat = new HashMap<>();
+    public abstract double getWeight();
+    public abstract double getHealth();
+    public abstract int getMaxQuantityInLocation();
+    public abstract double getKgEnoughFood();
+    public abstract int getSpeed();
+    public abstract String getView();
+    public void setIsland(Location[][] island) {
+        this.island = island;
+    }
+    public Location getLocation() {
+        return location;
+    }
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
-    private Map<Class<?>, Integer> canEat = new HashMap<>();
+    public void setHealth(double health) {
+        this.health = health;
+    }
 
+    public boolean isCanGenerate() {
+        return isCanGenerate;
+    }
+
+    public void setCanGenerate(boolean canGenerate) {
+        isCanGenerate = canGenerate;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+    public Location[][] getIsland() {
+        return island;
+    }
     public Map<Class<?>, Integer> getCanEat() {
         return canEat;
     }
-
-    public abstract double getHealth();
-    public abstract int getMaxQuantityInLocation();
-
-    public abstract double getKgEnoughFood();
-
-    public abstract int getSpeed();
-
     public Animal getKinder(Animal animal) {
         if (animal.getClass().equals(Bear.class))
             return new Bear();
@@ -57,24 +87,18 @@ public abstract class Animal extends Organism {
             return new Sheep();
         else if (animal.getClass().equals(Wolf.class))
             return new Wolf();
-        else return null; // must be exception in future
+        else throw new ClassNotAnimal(CLASS_NOT_ANIMAL);
 
     }
-
-
     public void move() {
         int speed = getSpeed();
-        int steps = getRandom().nextInt(speed + 1);
+        int steps = random.nextInt(speed + 1);
         if (steps > 0) {
             for (int i = 0; i < steps; i++)
                 changeLocation();
             setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_MOVE);
             System.out.println(this.getClass().getSimpleName() + " move on general.Location" + getLocation().toString());
         }
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
     }
 
     public void generate() {
@@ -114,34 +138,34 @@ public abstract class Animal extends Organism {
     public void changeLocation() {
         int height = getLocation().getHeight();
         int width = getLocation().getWidth();
-        Direction direction = Direction.values()[getRandom().nextInt(Direction.values().length)];
+        Direction direction = Direction.values()[random.nextInt(Direction.values().length)];
         switch (direction) {
             case UP:
                 if (height > 0 && getCountOfAnimalKind(getIsland()[width][height - 1], this) < getMaxQuantityInLocation()) {
-                    getIsland()[width][height].animalList.remove(this);
+                    getIsland()[width][height].getAnimalList().remove(this);
                     setLocation(getIsland()[width][--height]);
-                    getIsland()[width][height].animalList.add(this);
+                    getIsland()[width][height].getAnimalList().add(this);
                 }
                 break;
             case DOWN:
                 if (height < getIsland().length && getCountOfAnimalKind(getIsland()[width][height + 1], this) < getMaxQuantityInLocation()) {
-                    getIsland()[width][height].animalList.remove(this);
+                    getIsland()[width][height].getAnimalList().remove(this);
                     setLocation(getIsland()[width][++height]);
-                    getIsland()[width][height].animalList.add(this);
+                    getIsland()[width][height].getAnimalList().add(this);
                 }
                 break;
             case LEFT:
                 if (width > 0 && getCountOfAnimalKind(getIsland()[width - 1][height], this) < getMaxQuantityInLocation()) {
-                    getIsland()[width][height].animalList.remove(this);
+                    getIsland()[width][height].getAnimalList().remove(this);
                     setLocation(getIsland()[--width][height]);
-                    getIsland()[width][height].animalList.add(this);
+                    getIsland()[width][height].getAnimalList().add(this);
                 }
                 break;
             case RIGHT:
                 if (width < getIsland()[height].length && getCountOfAnimalKind(getIsland()[width + 1][height], this) < getMaxQuantityInLocation()) {
-                    getIsland()[width][height].animalList.remove(this);
+                    getIsland()[width][height].getAnimalList().remove(this);
                     setLocation(getIsland()[++width][height]);
-                    getIsland()[width][height].animalList.add(this);
+                    getIsland()[width][height].getAnimalList().add(this);
                 }
                 break;
             case STAY_OUT:

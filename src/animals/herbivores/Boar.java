@@ -16,7 +16,28 @@ public class Boar extends Herbivore implements EatAnimal {
     public Boar() {
         initCanEat();
     }
-
+    public String getView() {
+        return view;
+    }
+    public double getWeight() {
+        return weight;
+    }
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
     public void initCanEat() {
         getCanEat().put(Mouse.class, 50);
         getCanEat().put(Gusin.class, 90);
@@ -24,43 +45,15 @@ public class Boar extends Herbivore implements EatAnimal {
     }
 
     @Override
-    public double getHealth() {
-        return health;
-    }
-
-    @Override
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public String getView() {
-        return view;
-    }
-    @Override
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-    @Override
     public void eatAnimal() {
         Random random = new Random();
         List<Animal> animalsToEat = randomAnimalsToEat();
         Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
         if (random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
-            if (getHealth() < MAX_HEALTH) {
-                double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
+                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
                 System.out.println(getView() + " ate " + animal.getView());
                 animal.die();
-            }
         }
     }
     public void run() {

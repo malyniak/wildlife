@@ -5,8 +5,18 @@ public class ConsoleView{
     public ConsoleView(Location[][] island) {
         this.island=island;
     }
-    public void showCountOrganismsAtLocation(Location location) {
-        System.out.println("There are "+location.getAnimalList().size()+" animals at "+location);
-        System.out.println("There are "+location.getPlantsList().size()+" plants at "+location);
+    public void showCountAnimals() {
+        for(int i=0; i<island.length; i++) {
+            for (int j=0; j<island[i].length; j++) {
+                System.out.println(island[i][j]);
+            }
+        }
+    }
+    public void showCountPlants() {
+        for(int i=0; i<island.length; i++) {
+            for (int j=0; j<island[i].length; j++) {
+                System.out.println(island[i][j]);
+            }
+        }
     }
 }

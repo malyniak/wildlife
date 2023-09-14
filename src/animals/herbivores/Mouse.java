@@ -13,20 +13,31 @@ public class Mouse extends Herbivore implements EatAnimal {
     private final double kgEnoughFood = 0.01;
     private double health = 50;
 
+    public Mouse() {
+        initCanEat();
+    }
+    public String getView() {
+        return view;
+    }
+    public double getWeight() {
+        return weight;
+    }
+    @Override
+    public int getMaxQuantityInLocation() {
+        return maxQuantityInLocation;
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
     @Override
     public double getHealth() {
         return health;
     }
-
-    @Override
-    public double getKgEnoughFood() {
-        return (int) kgEnoughFood;
-    }
-
-    public Mouse() {
-        initCanEat();
-    }
-
     public void initCanEat() {
         getCanEat().put(Plant.class, 100);
         getCanEat().put(Gusin.class, 90);
@@ -36,12 +47,10 @@ public class Mouse extends Herbivore implements EatAnimal {
         List<Animal> animalsToEat = randomAnimalsToEat();
         Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
         if (random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
-            if (getHealth() < MAX_HEALTH) {
                 double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
                 System.out.println(getView() + " ate " + animal.getView());
                 animal.die();
-            }
         }
     }
     public void run() {
@@ -57,18 +66,7 @@ public class Mouse extends Herbivore implements EatAnimal {
         }
     }
 
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
-    public double getWeight() {
-        return (int) weight;
-    }
-    @Override
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-    public String getView() {
-        return view;
-    }
+
+
+
 }

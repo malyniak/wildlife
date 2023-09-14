@@ -12,36 +12,40 @@ public class Rabbit extends Herbivore {
     public Rabbit() {
         initCanEat();
     }
-
-    public void initCanEat() {
-        getCanEat().put(Plant.class, 100);
+    public String getView() {
+        return view;
     }
-
-    @Override
-    public double getHealth() {
-        return health;
-    }
-
-    @Override
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
-
     @Override
     public double getWeight() {
         return weight;
     }
-
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-    public String getView() {
-        return view;
+    @Override
+    public int getSpeed() {
+        return speed;
     }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
+    public void initCanEat() {
+        getCanEat().put(Plant.class, 100);
+    }
+
+
+
+
+
+
+
+
+
+
 }

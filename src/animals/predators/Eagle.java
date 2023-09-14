@@ -12,23 +12,8 @@ public class Eagle extends Predator {
     public Eagle() {
         initCanEat();
     }
-    public void initCanEat() {
-        getCanEat().put(Fox.class, 10);
-        getCanEat().put(Rabbit.class, 90);
-        getCanEat().put(Mouse.class, 90);
-        getCanEat().put(Duck.class, 80);
-    }
-    @Override
-    public double getHealth() {
-        return health;
-    }
-    @Override
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-    @Override
-    public int getSpeed() {
-        return speed;
+    public String getView() {
+        return view;
     }
     @Override
     public double getWeight() {
@@ -38,8 +23,29 @@ public class Eagle extends Predator {
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
-    public String getView() {
-        return view;
+    @Override
+    public int getSpeed() {
+        return speed;
     }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
+    public void initCanEat() {
+        getCanEat().put(Fox.class, 10);
+        getCanEat().put(Rabbit.class, 90);
+        getCanEat().put(Mouse.class, 90);
+        getCanEat().put(Duck.class, 80);
+    }
+
+
+
+
+
+
+
 }

@@ -17,57 +17,48 @@ public class Duck extends Herbivore implements EatAnimal {
     public Duck() {
         initCanEat();
     }
-
-    public void initCanEat() {
-        getCanEat().put(Gusin.class, 90);
-        getCanEat().put(Plant.class, 100);
-    }
-
     @Override
-    public double getHealth() {
-        return health;
-    }
-
-    @Override
-    public double getKgEnoughFood() {
-        return  kgEnoughFood;
-    }
-
-    @Override
-    public void eatAnimal() {
-        Random random = new Random();
-        List<Animal> animalsToEat = randomAnimalsToEat();
-        Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
-        if (random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
-            if (getHealth() < MAX_HEALTH) {
-                double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
-                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                System.out.println(getView() + " ate " + animal.getView());
-                animal.die();
-            }
-        }
-    }
-
-    @Override
-    public int getSpeed() {
-        return speed;
+    public String getView() {
+        return view;
     }
 
     @Override
     public double getWeight() {
         return weight;
     }
-
     @Override
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-
     @Override
-    public String getView() {
-        return view;
+    public int getSpeed() {
+        return speed;
+    }
+    @Override
+    public double getKgEnoughFood() {
+        return  kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
     }
 
+    public void initCanEat() {
+        getCanEat().put(Gusin.class, 90);
+        getCanEat().put(Plant.class, 100);
+    }
+    @Override
+    public void eatAnimal() {
+        Random random = new Random();
+        List<Animal> animalsToEat = randomAnimalsToEat();
+        Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
+        if (random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
+                double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
+                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+                System.out.println(getView() + " ate " + animal.getView());
+                animal.die();
+        }
+    }
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             while (getHealth() < MAX_HEALTH) {

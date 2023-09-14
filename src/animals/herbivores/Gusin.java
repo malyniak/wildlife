@@ -12,20 +12,8 @@ public class Gusin extends Herbivore {
     public Gusin() {
         initCanEat();
     }
-    public void initCanEat(){
-        getCanEat().put(Plant.class, 100);
-    }
-    @Override
-    public double getHealth() {
-        return health;
-    }
-    @Override
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-    @Override
-    public int getSpeed() {
-        return speed;
+    public String getView() {
+        return view;
     }
     @Override
     public double getWeight() {
@@ -35,8 +23,26 @@ public class Gusin extends Herbivore {
     public int getMaxQuantityInLocation() {
         return maxQuantityInLocation;
     }
-    public String getView() {
-        return view;
+    @Override
+    public int getSpeed() {
+        return speed;
     }
+    @Override
+    public double getKgEnoughFood() {
+        return kgEnoughFood;
+    }
+    @Override
+    public double getHealth() {
+        return health;
+    }
+    public void initCanEat(){
+        getCanEat().put(Plant.class, 100);
+    }
+
+
+
+
+
+
 
 }

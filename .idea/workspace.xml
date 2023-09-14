@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="wildlife" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/wildlife.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2023_17_36_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2023_17_36__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2023_17_37_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2023_17_37__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animals/EatAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/EatAnimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animals/EatPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/EatPlant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Buffalo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Deer.java" afterDir="false" />
@@ -25,9 +40,13 @@
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Fox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/ClassNotAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/ClassNotAnimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/IncorrectSizeIslandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/IncorrectSizeIslandException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/general/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/LocationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/LocationInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/general/LocationInitializer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Organism.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
     </list>
@@ -48,7 +67,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="development" />
+        <entry key="$PROJECT_DIR$" value="temp" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +86,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2UeTcZ0iRlzbSGdnuaJ5sfLfqCA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -77,16 +99,30 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="animals" />
       <recent name="animal" />
     </key>
   </component>
@@ -98,8 +134,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693299127555</updated>
+      <workItem from="1694350457023" duration="1183000" />
+      <workItem from="1694351691340" duration="156000" />
+      <workItem from="1694352014143" duration="1378000" />
+      <workItem from="1694353985421" duration="73000" />
+      <workItem from="1694413002881" duration="4275000" />
+      <workItem from="1694538961522" duration="798000" />
+      <workItem from="1694619508287" duration="7258000" />
+      <workItem from="1694668918608" duration="7467000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -113,29 +160,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animals/predators/WolfFlock.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animals/predators/WolfFlock.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/animals/predators/WolfFlock.java</url>
-          <line>16</line>
-          <properties class="animals.predators.WolfFlock" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Island" memberName="width" />
@@ -152,8 +176,6 @@
         <watch expression="animals" />
         <watch expression="locations" language="JAVA" />
         <watch expression="locations" />
-        <watch expression="this" />
-        <watch expression="this" />
         <watch expression="this" />
       </configuration>
     </watches-manager>
