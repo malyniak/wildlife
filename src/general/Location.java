@@ -3,12 +3,14 @@ package general;
 import animals.*;
 import animals.herbivores.*;
 import animals.predators.*;
+import lombok.Getter;
+import lombok.Setter;
 import plant.*;
 
 import java.util.*;
-
+@Getter
+@Setter
 public class Location {
-    private Random random = new Random();
     int width;
     int height;
     private List<Animal> animalList;
@@ -20,31 +22,12 @@ public class Location {
         setAnimalList();
         setPlantsList();
     }
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public List<Animal> getAnimalList() {
-        return animalList;
-    }
-
     public void setAnimalList() {
         animalList = new ArrayList<>();
         Set<Animal> allSpecies = getAllSpecies();
         for (Animal animal : allSpecies) {
             int maxQuantityInLocation = animal.getMaxQuantityInLocation();
-            for (int i = 0; i < random.nextInt(maxQuantityInLocation + 1); i++) {
+            for (int i = 0; i < Menu.random.nextInt(maxQuantityInLocation + 1); i++) {
                 if (animal.getClass()==Bear.class) {
                     animalList.add(new Bear());
                 } else if (animal.getClass()==Boa.class) {
@@ -82,12 +65,9 @@ public class Location {
         }
 
     }
-    public List<Plant> getPlantsList() {
-        return plantsList;
-    }
     public void setPlantsList() {
         plantsList = new ArrayList<>();
-                for (int i = 0; i < random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
+                for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
                     plantsList.add(new Plant());
         }
     }

@@ -1,30 +1,21 @@
 package animals.predators;
 
 import animals.Animal;
-import general.Location;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import static general.Constants.*;
 
+import static general.Constants.*;
+@Getter
 public class WolfFlock {
     private final String view= "\uD83D\uDC3A\uD83D\uDC3A\uD83D\uDC3A";
     private List<Wolf> wolves;
     private Map<Class<?>, Integer> canEat = new HashMap<>();
-
     public WolfFlock(List<Wolf> wolves) {
         this.wolves = wolves;
-    }
-    public String getView() {
-        return view;
-    }
-    public List<Wolf> getWolves() {
-        return wolves;
-    }
-    public Map<Class<?>, Integer> getCanEat() {
-        return canEat;
     }
     public void eat() {
         Random random = new Random();

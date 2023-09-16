@@ -1,9 +1,10 @@
 package plant;
 
-import general.Island;
 import general.Location;
 import general.Organism;
+import lombok.Getter;
 
+@Getter
 public class Plant extends Organism {
     public static final int MAX_QUANTITY_AT_LOCATION = 200;
     private Location[][] island;
@@ -15,36 +16,15 @@ public class Plant extends Organism {
     public void setIsland(Location [][] island) {
         this.island = island;
     }
-    public Location getLocation() {
-        return location;
-    }
     public void setLocation(Location location) {
         this.location = location;
     }
-
-    public String getView() {
-        return view;
-    }
-    public double getWeight() {
-        return weight;
-    }
-
-    public boolean isCanGenerate() {
-        return isCanGenerate;
-    }
-
     public void setCanGenerate(boolean canGenerate) {
         isCanGenerate = canGenerate;
     }
-
-    public boolean isAlive() {
-        return isAlive;
-    }
-
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
-
     @Override
     public void generate() {
         if (getLocation().getPlantsList().size() < MAX_QUANTITY_AT_LOCATION) {
@@ -54,20 +34,14 @@ public class Plant extends Organism {
             setCanGenerate(false);
         }
     }
-
     @Override
     public void die() {
         getLocation().getPlantsList().remove(this);
         setAlive(false);
     }
-
-    @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+        if (isAlive) {
             generate();
-            if (!isAlive())
-                Thread.currentThread().interrupt();
         }
-
     }
 }

@@ -15,29 +15,14 @@ public class Wolf extends Predator {
     private final int maxQuantityInLocation = 30;
     private final int speed = 3;
     private final int kgEnoughFood = 8;
-    private double health = 50;
     private List<Wolf> wolvesAtLocation;
     public Wolf() {
+        setView(view);
+        setWeight(weight);
+        setMaxQuantityInLocation(maxQuantityInLocation);
+        setSpeed(speed);
+        setKgEnoughFood(kgEnoughFood);
         initCanEat();
-    }
-    public String getView() {
-        return view;
-    }
-    public double getWeight() {
-        return weight;
-    }
-    public int getMaxQuantityInLocation() {
-        return maxQuantityInLocation;
-    }
-    public int getSpeed() {
-        return speed;
-    }
-    public double getKgEnoughFood() {
-        return kgEnoughFood;
-    }
-    @Override
-    public double getHealth() {
-        return health;
     }
     public List<Wolf> getWolvesAtLocation() {
         wolvesAtLocation = new ArrayList<>();
@@ -61,43 +46,26 @@ public class Wolf extends Predator {
 
     public void eatAnimal() {
         Random random = new Random();
-        List<Animal> animalsToEat = randomAnimalsToEat();
-        if (getWolvesAtLocation().size() > MIN_COUNT_FOR_WOLF_FLOCK) {
-         WolfFlock wolfFlock=new WolfFlock(getWolvesAtLocation());
-          wolfFlock.eat();
-
-        } else {
+        List<Animal> animalsToEat = animalsForEat();
             Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
-            if (random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
-                if (getHealth() < MAX_HEALTH) {
-                    double newHealth = getHealth() + (animal.getWeight() * 100 / getKgEnoughFood());
+            if (random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
+                    double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
                     setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
                     System.out.println(getView() + " ate " + animal.getView());
                     animal.die();
-                }
             }
         }
-    }
-
-    @Override
-    public void die() {
-        getLocation().getAnimalList().remove(this);
-        setAlive(false);
-        Thread.currentThread().interrupt();
-    }
-
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            while (getHealth() < MAX_HEALTH) {
-                eatAnimal();
-            }
-            move();
-            generate();
-            if (!isAlive())
-                Thread.currentThread().interrupt();
-
+        checkHealth();
+        if (getHealth() < MAX_HEALTH & checkEatExists()) {
+            if(getWolvesAtLocation().size()>MIN_COUNT_FOR_WOLF_FLOCK) {
+                WolfFlock wolfFlock = new WolfFlock(getWolvesAtLocation());
+                wolfFlock.eat();
+            } else eatAnimal();
         }
+        generate();
+        move();
     }
 }
 

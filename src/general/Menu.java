@@ -3,12 +3,11 @@ package general;
 import animals.Animal;
 import exceptions.IncorrectSizeIslandException;
 import plant.Plant;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.Random;
 import static general.Constants.*;
 public class Menu {
+    public static volatile Random random = new Random();
     private int width;
     private int height;
 

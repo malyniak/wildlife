@@ -1,39 +1,34 @@
 package animals.herbivores;
 
 import animals.*;
+import general.Menu;
 import plant.*;
+
 import java.util.*;
+
 import static general.Constants.*;
 
 public abstract class Herbivore extends Animal implements EatPlant {
-    private double health = 50;
-
     public void eatPlant() {
-        Random random = new Random();
+        if (getHealth() >= MAX_HEALTH & checkEatExists())
+            return;
         List<Plant> plantsList = getLocation().getPlantsList();
-        Plant plant = plantsList.get(random.nextInt(plantsList.size()));
+        Plant plant = plantsList.get(Menu.random.nextInt(plantsList.size()));
         if (getCanEat().containsKey(plant.getClass())) {
-            if (getHealth() < MAX_HEALTH) {
-                double newHealth = getHealth() + (plant.getWeight() * PERCENT / getKgEnoughFood());
-                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                System.out.println(getView() + " ate " + plant.getView());
-                plant.die();
-            }
+            double newHealth = getHealth() + (plant.getWeight() * PERCENT / getKgEnoughFood());
+            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+            System.out.println(getView() + " ate " + plant.getView());
+            plant.die();
         }
     }
-
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            while (getHealth() < MAX_HEALTH) {
-            eatPlant();
-            }
-            move();
-            generate();
-            if (!isAlive())
-                Thread.currentThread().interrupt();
-
-
-        }
+        checkHealth();
+        eatPlant();
+        generate();
+        move();
     }
 
+    public boolean checkEatExists() {
+        return !getLocation().getPlantsList().isEmpty();
+    }
 }

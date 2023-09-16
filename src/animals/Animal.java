@@ -2,110 +2,85 @@ package animals;
 
 import animals.herbivores.*;
 import animals.predators.*;
-import exceptions.ClassNotAnimal;
+import exceptions.ClassNotExistException;
 import general.*;
-import java.util.*;
-import static general.Constants.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.*;
+
+import static general.Constants.*;
+@Getter
+@Setter
 public abstract class Animal extends Organism {
-    private Random random = new Random();
     private Location[][] island;
     private Location location;
     private double health = 50;
-    private boolean isCanGenerate=true;
-    private boolean isAlive=true;
-    private Map<Class<?>, Integer> canEat = new HashMap<>();
-    public abstract double getWeight();
-    public abstract double getHealth();
-    public abstract int getMaxQuantityInLocation();
-    public abstract double getKgEnoughFood();
-    public abstract int getSpeed();
-    public abstract String getView();
-    public void setIsland(Location[][] island) {
-        this.island = island;
-    }
-    public Location getLocation() {
-        return location;
-    }
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public boolean isCanGenerate() {
-        return isCanGenerate;
-    }
-
-    public void setCanGenerate(boolean canGenerate) {
-        isCanGenerate = canGenerate;
-    }
-
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-    public Location[][] getIsland() {
-        return island;
-    }
-    public Map<Class<?>, Integer> getCanEat() {
-        return canEat;
-    }
-    public Animal getKinder(Animal animal) {
+    private boolean isCanGenerate = true;
+    private boolean isAlive = true;
+    private final Map<Class<?>, Integer> canEat = new HashMap<>();
+    private String view;
+    private double weight;
+    private int maxQuantityInLocation;
+    private double kgEnoughFood;
+    private int speed;
+    public abstract boolean checkEatExists();
+    @NotNull
+    public Animal getKinder(Animal animal) throws ClassNotExistException {
         if (animal.getClass().equals(Bear.class))
             return new Bear();
-        else if (animal.getClass().equals(Boa.class))
+        if (animal.getClass().equals(Boa.class))
             return new Boa();
-        else if (animal.getClass().equals(Buffalo.class)) {
+        if (animal.getClass().equals(Buffalo.class))
             return new Buffalo();
-        } else if (animal.getClass().equals(Boar.class))
+        if (animal.getClass().equals(Boar.class))
             return new Boar();
-        else if (animal.getClass().equals(Deer.class))
+        if (animal.getClass().equals(Deer.class))
             return new Deer();
-        else if (animal.getClass().equals(Duck.class))
+        if (animal.getClass().equals(Duck.class))
             return new Duck();
-        else if (animal.getClass().equals(Eagle.class))
+        if (animal.getClass().equals(Eagle.class))
             return new Eagle();
-        else if (animal.getClass().equals(Fox.class))
+        if (animal.getClass().equals(Fox.class))
             return new Fox();
-        else if (animal.getClass().equals(Goat.class))
+        if (animal.getClass().equals(Goat.class))
             return new Goat();
-        else if (animal.getClass().equals(Gusin.class))
+        if (animal.getClass().equals(Gusin.class))
             return new Gusin();
-        else if (animal.getClass().equals(Horse.class))
+        if (animal.getClass().equals(Horse.class))
             return new Horse();
-        else if (animal.getClass().equals(Mouse.class))
+        if (animal.getClass().equals(Mouse.class))
             return new Mouse();
-        else if (animal.getClass().equals(Rabbit.class))
+        if (animal.getClass().equals(Rabbit.class))
             return new Rabbit();
-        else if (animal.getClass().equals(Sheep.class))
+        if (animal.getClass().equals(Sheep.class))
             return new Sheep();
-        else if (animal.getClass().equals(Wolf.class))
+        if (animal.getClass().equals(Wolf.class))
             return new Wolf();
-        else throw new ClassNotAnimal(CLASS_NOT_ANIMAL);
-
+        else throw new ClassNotExistException(CLASS_NOT_ANIMAL);
     }
     public void move() {
         int speed = getSpeed();
-        int steps = random.nextInt(speed + 1);
+        int steps = Menu.random.nextInt(speed + 1);
         if (steps > 0) {
             for (int i = 0; i < steps; i++)
                 changeLocation();
             setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_MOVE);
-            System.out.println(this.getClass().getSimpleName() + " move on general.Location" + getLocation().toString());
+            System.out.println(this.getClass().getSimpleName() + " move at " + getLocation());
         }
     }
 
     public void generate() {
         List<Animal> animals = animalsToGeneration();
-        if (animals.size() < getMaxQuantityInLocation() && animals.size() > 1 && isCanGenerate()) {
-            Animal animal = animals.get(random.nextInt(animals.size()));
-            Animal child = getKinder(animal);
+        if (animals.size() < getMaxQuantityInLocation() && animals.size() > ANIMAL_FOR_GENERATE && isCanGenerate()) {
+            Animal animal = animals.get(Menu.random.nextInt(animals.size()));
+            Animal child = null;
+            try {
+                child = getKinder(animal);
+            } catch (ClassNotExistException e) {
+                throw new RuntimeException(e);
+            }
             getLocation().getAnimalList().add(child);
             child.setLocation(getLocation());
             child.setIsland(getIsland());
@@ -122,7 +97,6 @@ public abstract class Animal extends Organism {
             if (animal.getClass().equals(this.getClass())) {
                 animalsToGeneration.add(animal);
             }
-
         }
         return animalsToGeneration;
     }
@@ -135,10 +109,11 @@ public abstract class Animal extends Organism {
         }
         return count;
     }
+
     public void changeLocation() {
         int height = getLocation().getHeight();
         int width = getLocation().getWidth();
-        Direction direction = Direction.values()[random.nextInt(Direction.values().length)];
+        Direction direction = Direction.values()[Menu.random.nextInt(Direction.values().length)];
         switch (direction) {
             case UP:
                 if (height > 0 && getCountOfAnimalKind(getIsland()[width][height - 1], this) < getMaxQuantityInLocation()) {
@@ -173,7 +148,7 @@ public abstract class Animal extends Organism {
         }
     }
 
-    public List<Animal> randomAnimalsToEat() {
+    public List<Animal> animalsForEat() {
         List<Animal> animals = new ArrayList<>();
         for (Animal animal : getLocation().getAnimalList()) {
             if (canEat.containsKey(animal.getClass())) {
@@ -182,14 +157,18 @@ public abstract class Animal extends Organism {
         }
         return animals;
     }
+
     @Override
     public void die() {
         getLocation().getAnimalList().remove(this);
         setAlive(false);
-        System.out.println(getView() +"die");
-        Thread.currentThread().interrupt();
-
+        System.out.println(getView() + "die");
     }
+    public void checkHealth() {
+        if (getHealth() == 0)
+            die();
+    }
+
 }
 
 
