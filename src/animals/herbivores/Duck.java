@@ -6,6 +6,7 @@ import general.Menu;
 import plant.Plant;
 
 import java.util.List;
+import java.util.Map;
 
 import static general.Constants.*;
 
@@ -25,18 +26,17 @@ public class Duck extends Herbivore implements EatAnimal {
         initCanEat();
     }
     public void initCanEat() {
-        getCanEat().put(Gusin.class, 90);
-        getCanEat().put(Plant.class, 100);
+        getCanEat().putAll(Map.of(Gusin.class, 90, Plant.class, 100));
     }
     @Override
     public void eatAnimal() {
-        List<Animal> animalsToEat = animalsForEat();
-        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
+        List<Animal> animalsForEat = animalsForEat();
+        Animal animal = animalsForEat.get(Menu.random.nextInt(animalsForEat.size()));
         if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
                 double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
                 setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                System.out.println(getView() + " ate " + animal.getView());
-                animal.die();
+            System.out.printf("%s ate %s\n", getView(), animal.getView());
+            animal.die();
         }
     }
     public void eat() {

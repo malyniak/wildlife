@@ -5,6 +5,8 @@ import animals.EatAnimal;
 import general.Menu;
 import plant.Plant;
 import java.util.List;
+import java.util.Map;
+
 import static general.Constants.*;
 public class Boar extends Herbivore implements EatAnimal {
     private final String view = "\uD83D\uDC17";
@@ -22,9 +24,7 @@ public class Boar extends Herbivore implements EatAnimal {
         initCanEat();
     }
     public void initCanEat() {
-        getCanEat().put(Mouse.class, 50);
-        getCanEat().put(Gusin.class, 90);
-        getCanEat().put(Plant.class, 100);
+        getCanEat().putAll(Map.of(Mouse.class, 50, Gusin.class, 90, Plant.class, 100 ));
     }
 
     @Override
@@ -34,8 +34,9 @@ public class Boar extends Herbivore implements EatAnimal {
         if (Menu.random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
             double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
             setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-            System.out.println(getView() + " ate " + animal.getView());
             animal.die();
+            System.out.printf("%s ate %s\n", getView(), animal.getView());
+
         }
     }
     public void eat() {

@@ -2,6 +2,8 @@ package animals.predators;
 
 import animals.herbivores.*;
 
+import java.util.Map;
+
 public class Boa extends Predator {
     private final String view = "\uD83D\uDC0D";
     private final int weight = 15;
@@ -18,10 +20,7 @@ public class Boa extends Predator {
         initCanEat();
     }
     public void initCanEat() {
-        getCanEat().put(Fox.class, 15);
-        getCanEat().put(Rabbit.class, 20);
-        getCanEat().put(Mouse.class, 40);
-        getCanEat().put(Duck.class, 10);
+        getCanEat().putAll(Map.of(Fox.class, 15, Rabbit.class, 20, Mouse.class, 40, Duck.class, 10));
     }
 
 

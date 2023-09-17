@@ -23,7 +23,7 @@ public class WolfFlock {
             while (wolves.size() > MIN_COUNT_FOR_WOLF_FLOCK) {
                 if (animal.getClass() != Wolf.class) {
                     double animalWeight = animal.getWeight();
-                    System.out.println(getView() + " ate " + animal.getView());
+                    System.out.printf("%s ate %s\n", getView(), animal.getView());
                     animal.die();
                     for (Wolf wolf : wolves) {
                         double newHealth = wolf.getHealth() + animalWeight / wolves.size() * PERCENT / wolf.getKgEnoughFood();

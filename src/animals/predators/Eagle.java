@@ -2,6 +2,8 @@ package animals.predators;
 
 import animals.herbivores.*;
 
+import java.util.Map;
+
 public class Eagle extends Predator {
     private final String view= "\uD83E\uDD85";
     private final int weight=6;
@@ -17,10 +19,7 @@ public class Eagle extends Predator {
         initCanEat();
     }
     public void initCanEat() {
-        getCanEat().put(Fox.class, 10);
-        getCanEat().put(Rabbit.class, 90);
-        getCanEat().put(Mouse.class, 90);
-        getCanEat().put(Duck.class, 80);
+        getCanEat().putAll(Map.of(Fox.class, 10, Rabbit.class, 90, Mouse.class, 90, Duck.class, 80));
     }
 
 }

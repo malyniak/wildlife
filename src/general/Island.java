@@ -30,6 +30,7 @@ public class Island {
                List<Animal> animals= locations[i][j].getAnimalList();
                 animals.forEach(x->executorService.scheduleAtFixedRate(x, 1, 10, TimeUnit.SECONDS));
                consoleView.showCountAnimals();
+               consoleView.showCountPlants();
             }
         }
     }

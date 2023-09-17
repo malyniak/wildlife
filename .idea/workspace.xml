@@ -10,36 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Buffalo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Deer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Gusin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Gusin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Horse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Rabbit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Bear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Boa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Eagle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Fox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/ClassNotAnimal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/ConsoleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wildlife.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wildlife.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +61,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/OrganismLife.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -94,34 +78,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "development",
-    "last_opened_file_path": "C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="exceptions" />
       <recent name="animals" />
+      <recent name="exceptions" />
       <recent name="animal" />
     </key>
   </component>
@@ -145,7 +129,8 @@
       <workItem from="1694755562823" duration="2157000" />
       <workItem from="1694762456140" duration="5565000" />
       <workItem from="1694800646410" duration="155000" />
-      <workItem from="1694843910550" duration="3348000" />
+      <workItem from="1694843910550" duration="4761000" />
+      <workItem from="1694931700814" duration="7399000" />
     </task>
     <servers />
   </component>
@@ -164,6 +149,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/animals/herbivores/Duck.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Island" memberName="width" />
@@ -183,8 +177,5 @@
         <watch expression="this" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/wildlife$Main.ic" NAME="Main Coverage Results" MODIFIED="1693672102715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -5,6 +5,7 @@ import animals.herbivores.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import static general.Constants.*;
@@ -33,15 +34,8 @@ public class Wolf extends Predator {
         return wolvesAtLocation;
     }
     public void initCanEat() {
-        getCanEat().put(Horse.class, 10);
-        getCanEat().put(Deer.class, 15);
-        getCanEat().put(Rabbit.class, 60);
-        getCanEat().put(Mouse.class, 80);
-        getCanEat().put(Goat.class, 60);
-        getCanEat().put(Sheep.class, 70);
-        getCanEat().put(Boar.class, 15);
-        getCanEat().put(Buffalo.class, 10);
-        getCanEat().put(Duck.class, 40);
+        getCanEat().putAll(Map.of(Horse.class, 10, Deer.class, 15, Rabbit.class, 60, Mouse.class, 80, Goat.class, 60,
+                                  Sheep.class, 70, Boar.class, 15, Buffalo.class, 10, Duck.class, 40));
     }
 
     public void eatAnimal() {
@@ -51,8 +45,8 @@ public class Wolf extends Predator {
             if (random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
                     double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
                     setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
-                    System.out.println(getView() + " ate " + animal.getView());
-                    animal.die();
+                System.out.printf("%s ate %s\n", getView(), animal.getView());
+                animal.die();
             }
         }
     @Override
