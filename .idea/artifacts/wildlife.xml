@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="javafx-preloader" name="wildlife">
+    <output-path>$PROJECT_DIR$/out/artifacts/wildlife</output-path>
+    <root id="root">
+      <element id="archive" name="wildlife.jar">
+        <element id="module-output" name="wildlife" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
