@@ -117,9 +117,11 @@ public abstract class Animal extends Organism {
         setAlive(false);
     }
 
-    public void checkHealth() {
-        if (getHealth() <= 0)
+    public boolean checkHealth() {
+        if (getHealth() <= 0) {
             die();
+            return false;
+        } return true;
     }
 
 }

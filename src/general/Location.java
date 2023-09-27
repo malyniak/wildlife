@@ -60,10 +60,8 @@ public class Location {
                     animalList.add(new Wolf());
                 } else
                     break;
-
             }
         }
-
     }
     public void setPlantsList() {
         plantsList = new ArrayList<>();

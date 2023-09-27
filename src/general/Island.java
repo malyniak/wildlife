@@ -22,16 +22,22 @@ public class Island {
         for (int i = 0; i < locations.length; i++) {
             for (int j = 0; j < locations[i].length; j++) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                executorService.scheduleAtFixedRate(locations[i][j].getAnimalList().get(0), 1, 10, TimeUnit.SECONDS);
-               List<Animal> animals= locations[i][j].getAnimalList();
-                animals.forEach(x->executorService.scheduleAtFixedRate(x, 1, 10, TimeUnit.SECONDS));
-               consoleView.showCountAnimals();
-               consoleView.showCountPlants();
+                List<Animal> animals = locations[i][j].getAnimalList();
+                for (Animal animal : animals) {
+                    animals.forEach(x -> executorService.scheduleAtFixedRate(() -> {
+                        if (animal.isAlive()) {
+                            animal.run();
+                        }
+                    }, 1, 5, TimeUnit.SECONDS));
+                    consoleView.showCountAnimals();
+                    consoleView.showCountPlants();
+                }
             }
         }
     }
+
 }

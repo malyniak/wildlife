@@ -6,6 +6,7 @@ import plant.Plant;
 import java.io.*;
 import java.util.Random;
 import static general.Constants.*;
+
 public class Menu {
     public static volatile Random random = new Random();
     private int width;
@@ -43,9 +44,7 @@ public class Menu {
             }
         }
         island.setLocations(locations);
-
     }
-
 }
 
 
