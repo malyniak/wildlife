@@ -2,13 +2,10 @@ package animals.predators;
 
 import animals.Animal;
 import lombok.Getter;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
+import java.util.*;
 import static general.Constants.*;
+import static general.Menu.random;
+
 @Getter
 public class WolfFlock {
     private final String view= "\uD83D\uDC3A\uD83D\uDC3A\uD83D\uDC3A";
@@ -18,7 +15,6 @@ public class WolfFlock {
         this.wolves = wolves;
     }
     public void eat() {
-        Random random = new Random();
         for (Animal animal : wolves.get(0).getLocation().getAnimalList()) {
             while (wolves.size() > MIN_COUNT_FOR_WOLF_FLOCK) {
                 if (animal.getClass() != Wolf.class) {

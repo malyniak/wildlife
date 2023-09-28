@@ -27,8 +27,15 @@ public class Mouse extends Herbivore implements EatAnimal {
     public void initCanEat() {
         getCanEat().putAll(Map.of(Plant.class, 100, Gusin.class, 90));
     }
-
+    @Override
     public void eatAnimal() {
+        if (getHealth() >= MAX_HEALTH & checkEatExists()) {
+            return;
+        }
+        else if (getHealth() <= 0) {
+            die();
+            return;
+        }
         List<Animal> animalsToEat = animalsForEat();
         Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
         if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
@@ -49,10 +56,9 @@ public class Mouse extends Herbivore implements EatAnimal {
     }
 
     public void run() {
-        if (checkHealth()) {
             eat();
             generate();
             move();
-        }
+            setHealth(getHealth()-DECREASE_HEALTH_OF_HUNGER);
     }
 }

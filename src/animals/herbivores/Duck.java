@@ -28,11 +28,17 @@ public class Duck extends Herbivore implements EatAnimal {
     }
     @Override
     public void eatAnimal() {
-        List<Animal> animalsForEat = animalsForEat();
-        Animal animal = animalsForEat.get(Menu.random.nextInt(animalsForEat.size()));
-        if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
-                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
-                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+        if (getHealth() >= MAX_HEALTH & checkEatExists())
+            return;
+        else if (getHealth() <= 0) {
+            die();
+            return;
+        }
+        List<Animal> animalsToEat = animalsForEat();
+        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
+        if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
+            double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
             System.out.printf("%s ate %s\n", getView(), animal.getView());
             animal.die();
         }
@@ -46,10 +52,9 @@ public class Duck extends Herbivore implements EatAnimal {
             eatPlant();
     }
     public void run() {
-        if(checkHealth()) {
             eat();
             generate();
             move();
-        }
+            setHealth(getHealth()-DECREASE_HEALTH_OF_HUNGER);
     }
 }
