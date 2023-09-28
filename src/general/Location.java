@@ -1,13 +1,17 @@
 package general;
 
-import animals.*;
+import animals.Animal;
 import animals.herbivores.*;
 import animals.predators.*;
 import lombok.Getter;
 import lombok.Setter;
-import plant.*;
+import plant.Plant;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Getter
 @Setter
 public class Location {
@@ -22,41 +26,42 @@ public class Location {
         setAnimalList();
         setPlantsList();
     }
+
     public void setAnimalList() {
         animalList = new ArrayList<>();
         Set<Animal> allSpecies = getAllSpecies();
         for (Animal animal : allSpecies) {
             int maxQuantityInLocation = animal.getMaxQuantityInLocation();
             for (int i = 0; i < Menu.random.nextInt(maxQuantityInLocation + 1); i++) {
-                if (animal.getClass()==Bear.class) {
+                if (animal.getClass() == Bear.class) {
                     animalList.add(new Bear());
-                } else if (animal.getClass()==Boa.class) {
+                } else if (animal.getClass() == Boa.class) {
                     animalList.add(new Boa());
-                } else if (animal.getClass()==Boar.class) {
+                } else if (animal.getClass() == Boar.class) {
                     animalList.add(new Boar());
-                } else if (animal.getClass()==Buffalo.class) {
+                } else if (animal.getClass() == Buffalo.class) {
                     animalList.add(new Buffalo());
-                } else if (animal.getClass()==Deer.class) {
+                } else if (animal.getClass() == Deer.class) {
                     animalList.add(new Deer());
-                } else if (animal.getClass()==Duck.class) {
+                } else if (animal.getClass() == Duck.class) {
                     animalList.add(new Duck());
-                } else if (animal.getClass()==Eagle.class) {
+                } else if (animal.getClass() == Eagle.class) {
                     animalList.add(new Eagle());
-                } else if (animal.getClass()==Fox.class) {
+                } else if (animal.getClass() == Fox.class) {
                     animalList.add(new Fox());
-                } else if (animal.getClass()==Goat.class) {
+                } else if (animal.getClass() == Goat.class) {
                     animalList.add(new Goat());
-                } else if (animal.getClass()==Gusin.class) {
+                } else if (animal.getClass() == Gusin.class) {
                     animalList.add(new Gusin());
-                } else if (animal.getClass()==Horse.class) {
+                } else if (animal.getClass() == Horse.class) {
                     animalList.add(new Horse());
-                } else if (animal.getClass()==Mouse.class) {
+                } else if (animal.getClass() == Mouse.class) {
                     animalList.add(new Mouse());
-                } else if (animal.getClass()==Rabbit.class) {
+                } else if (animal.getClass() == Rabbit.class) {
                     animalList.add(new Rabbit());
-                } else if (animal.getClass()==Sheep.class) {
+                } else if (animal.getClass() == Sheep.class) {
                     animalList.add(new Sheep());
-                } else if (animal.getClass()==Wolf.class) {
+                } else if (animal.getClass() == Wolf.class) {
                     animalList.add(new Wolf());
                 } else
                     break;
@@ -65,12 +70,14 @@ public class Location {
         }
 
     }
+
     public void setPlantsList() {
         plantsList = new ArrayList<>();
-                for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
-                    plantsList.add(new Plant());
+        for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION + 1); i++) {
+            plantsList.add(new Plant());
         }
     }
+
     public Set<Animal> getAllSpecies() {
         HashSet<Animal> animals = new HashSet<>();
         animals.add(new Wolf());

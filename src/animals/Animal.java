@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -45,6 +46,7 @@ public abstract class Animal extends Organism {
                 .count();
         if (countThisKind < getMaxQuantityInLocation() && countThisKind > ANIMAL_FOR_GENERATE && isCanGenerate()) {
             Animal animal = getLocation().getAnimalList().stream()
+                    .filter(x->this.getClass()==x.getClass())
                     .skip(Menu.random.nextInt(getLocation().getAnimalList().size()-1))
                     .findFirst().get();
             Animal child = null;
@@ -113,8 +115,16 @@ public abstract class Animal extends Organism {
 
     @Override
     public void die() {
-        getLocation().getAnimalList().remove(this);
         setAlive(false);
+        List<Animal> animals=getLocation().getAnimalList();
+        Iterator it=animals.iterator();
+        while (it.hasNext()) {
+            if(it.next().equals(this)) {
+                it.remove();
+                break;
+            }
+        }
+        System.out.printf("%s die\n", getView());
     }
 
     public void checkHealth() {

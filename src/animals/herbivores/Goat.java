@@ -1,6 +1,6 @@
 package animals.herbivores;
 
-import plant.*;
+import plant.Plant;
 public class Goat extends Herbivore {
     private final String view= "\uD83D\uDC10";
     private final int weight=60;
@@ -15,6 +15,7 @@ public class Goat extends Herbivore {
         setSpeed(speed);
         setKgEnoughFood(kgEnoughFood);
         initCanEat();
+
     }
     public void initCanEat(){
         getCanEat().put(Plant.class, 100);

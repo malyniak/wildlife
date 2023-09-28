@@ -22,10 +22,10 @@ public abstract class Herbivore extends Animal implements EatPlant {
         }
     }
     public void run() {
-        checkHealth();
-        eatPlant();
-        generate();
-        move();
+            checkHealth();
+            eatPlant();
+            generate();
+            move();
     }
 
     public boolean checkEatExists() {

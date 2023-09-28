@@ -9,18 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
+    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add check if alive in executorService">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_annotations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_databind.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20230618.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/object_mapper_1_1_68.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/general/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wildlife.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="temp" />
+        <entry key="$PROJECT_DIR$" value="tempDevel" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,13 +99,13 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/Desktop/object-mapper-1.1.68.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
@@ -130,8 +140,24 @@
       <workItem from="1694762456140" duration="5565000" />
       <workItem from="1694800646410" duration="155000" />
       <workItem from="1694843910550" duration="4761000" />
-      <workItem from="1694931700814" duration="7399000" />
+      <workItem from="1694931700814" duration="8705000" />
+      <workItem from="1695014641250" duration="9202000" />
+      <workItem from="1695106648790" duration="2738000" />
+      <workItem from="1695543571143" duration="15000" />
+      <workItem from="1695554229841" duration="35000" />
+      <workItem from="1695554277375" duration="26000" />
+      <workItem from="1695617117580" duration="8365000" />
+      <workItem from="1695883902825" duration="42000" />
     </task>
+    <task id="LOCAL-00001" summary="add childrenFactory and streams in class animal">
+      <option name="closed" value="true" />
+      <created>1694944986306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694944986306</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,22 +168,29 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add childrenFactory and streams in class animal" />
+    <option name="LAST_COMMIT_MESSAGE" value="add childrenFactory and streams in class animal" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/animals/herbivores/Duck.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Island" memberName="width" />

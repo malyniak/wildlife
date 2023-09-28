@@ -40,8 +40,8 @@ public class Wolf extends Predator {
 
     public void eatAnimal() {
         Random random = new Random();
-        List<Animal> animalsToEat = animalsForEat();
-            Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
+        List<Animal> animalsCanBeEaten = animalsForEat();
+            Animal animal = animalsCanBeEaten.get(random.nextInt(animalsCanBeEaten.size()));
             if (random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
                     double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
                     setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);

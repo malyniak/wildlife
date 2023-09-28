@@ -1,0 +1,934 @@
+Index: wildlife.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/wildlife.iml b/wildlife.iml
+deleted file mode 100644
+--- a/wildlife.iml	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ /dev/null	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
+@@ -1,29 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="module-library" exported="">
+-      <library>
+-        <CLASSES>
+-          <root url="jar://$MODULE_DIR$/.idea/lib/lombok.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+-    <orderEntry type="module-library">
+-      <library>
+-        <CLASSES>
+-          <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/24.0.0/annotations-24.0.0.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"20\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/.idea/misc.xml	(date 1695554294756)
+@@ -1,5 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/libraries/fasterxml_jackson_core_annotations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/fasterxml_jackson_core_annotations.xml b/.idea/libraries/fasterxml_jackson_core_annotations.xml
+new file mode 100644
+--- /dev/null	(date 1695027985348)
++++ b/.idea/libraries/fasterxml_jackson_core_annotations.xml	(date 1695027985348)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="fasterxml.jackson.core.annotations" type="repository">
++    <properties maven-id="com.fasterxml.jackson.core:jackson-annotations:2.14.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.14.0/jackson-annotations-2.14.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/fasterxml_jackson_core.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/fasterxml_jackson_core.xml b/.idea/libraries/fasterxml_jackson_core.xml
+new file mode 100644
+--- /dev/null	(date 1695027985332)
++++ b/.idea/libraries/fasterxml_jackson_core.xml	(date 1695027985332)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="fasterxml.jackson.core" type="repository">
++    <properties maven-id="com.fasterxml.jackson.core:jackson-core:2.13.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.0/jackson-core-2.13.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: src/general/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package general;\r\n\r\nimport animals.Animal;\r\nimport exceptions.IncorrectSizeIslandException;\r\nimport plant.Plant;\r\nimport java.io.*;\r\nimport java.util.Random;\r\nimport static general.Constants.*;\r\npublic class Menu {\r\n    public static volatile Random random = new Random();\r\n    private int width;\r\n    private int height;\r\n\r\n    public void getDataFromUser() {\r\n        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {\r\n            System.out.println(SELECT_WIDTH);\r\n            width = Integer.parseInt(reader.readLine());\r\n            if (width <= 0)\r\n                throw new IncorrectSizeIslandException(INCORRECT_HEIGHT);\r\n            System.out.println(SELECT_HEIGHT);\r\n            height = Integer.parseInt(reader.readLine());\r\n            if (height <= 0)\r\n                throw new IncorrectSizeIslandException(INCORRECT_WIDTH);\r\n        } catch (IOException e) {\r\n            System.out.println(e.getMessage());\r\n        }\r\n    }\r\n\r\n    public void initIsland(Island island) {\r\n        Location[][] locations = new Location[width][height];\r\n        for (int i = 0; i < locations.length; i++) {\r\n            for (int j = 0; j < locations[i].length; j++) {\r\n                Location location = new Location(i, j);\r\n                locations[i][j] = location;\r\n                for (Animal animal : location.getAnimalList()) {\r\n                    animal.setLocation(location);\r\n                    animal.setIsland(locations);\r\n                }\r\n                for (Plant plant : location.getPlantsList()) {\r\n                    plant.setLocation(location);\r\n                    plant.setIsland(locations);\r\n                }\r\n            }\r\n        }\r\n        island.setLocations(locations);\r\n\r\n    }\r\n\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/general/Menu.java b/src/general/Menu.java
+--- a/src/general/Menu.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/general/Menu.java	(date 1695790313585)
+@@ -3,8 +3,12 @@
+ import animals.Animal;
+ import exceptions.IncorrectSizeIslandException;
+ import plant.Plant;
+-import java.io.*;
++
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.InputStreamReader;
+ import java.util.Random;
++
+ import static general.Constants.*;
+ public class Menu {
+     public static volatile Random random = new Random();
+@@ -46,6 +50,7 @@
+ 
+     }
+ 
++
+ }
+ 
+ 
+Index: .idea/libraries/fasterxml_jackson_core_databind.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/fasterxml_jackson_core_databind.xml b/.idea/libraries/fasterxml_jackson_core_databind.xml
+new file mode 100644
+--- /dev/null	(date 1695027985361)
++++ b/.idea/libraries/fasterxml_jackson_core_databind.xml	(date 1695027985361)
+@@ -0,0 +1,12 @@
++<component name="libraryTable">
++  <library name="fasterxml.jackson.core.databind" type="repository">
++    <properties maven-id="com.fasterxml.jackson.core:jackson-databind:2.10.1" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: src/animals/herbivores/Duck.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.herbivores;\r\n\r\nimport animals.Animal;\r\nimport animals.EatAnimal;\r\nimport general.Menu;\r\nimport plant.Plant;\r\n\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport static general.Constants.*;\r\n\r\npublic class Duck extends Herbivore implements EatAnimal {\r\n    private final String view= \"\\uD83E\\uDD86\";\r\n    private final int weight = 1;\r\n    private final int maxQuantityInLocation = 200;\r\n    private final int speed = 4;\r\n    private final double kgEnoughFood = 0.15;\r\n\r\n    public Duck() {\r\n        setView(view);\r\n        setWeight(weight);\r\n        setMaxQuantityInLocation(maxQuantityInLocation);\r\n        setSpeed(speed);\r\n        setKgEnoughFood(kgEnoughFood);\r\n        initCanEat();\r\n    }\r\n    public void initCanEat() {\r\n        getCanEat().putAll(Map.of(Gusin.class, 90, Plant.class, 100));\r\n    }\r\n    @Override\r\n    public void eatAnimal() {\r\n        List<Animal> animalsForEat = animalsForEat();\r\n        Animal animal = animalsForEat.get(Menu.random.nextInt(animalsForEat.size()));\r\n        if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {\r\n                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());\r\n                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n            System.out.printf(\"%s ate %s\\n\", getView(), animal.getView());\r\n            animal.die();\r\n        }\r\n    }\r\n    public void eat() {\r\n        if (getHealth() >= MAX_HEALTH & checkEatExists())\r\n            return;\r\n        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {\r\n            eatAnimal();\r\n        } else\r\n            eatPlant();\r\n    }\r\n\r\n    public void run() {\r\n        checkHealth();\r\n        eat();\r\n        generate();\r\n        move();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/herbivores/Duck.java b/src/animals/herbivores/Duck.java
+--- a/src/animals/herbivores/Duck.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/herbivores/Duck.java	(date 1695790313552)
+@@ -11,7 +11,7 @@
+ import static general.Constants.*;
+ 
+ public class Duck extends Herbivore implements EatAnimal {
+-    private final String view= "\uD83E\uDD86";
++    private final String view = "\uD83E\uDD86";
+     private final int weight = 1;
+     private final int maxQuantityInLocation = 200;
+     private final int speed = 4;
+@@ -25,29 +25,31 @@
+         setKgEnoughFood(kgEnoughFood);
+         initCanEat();
+     }
++
+     public void initCanEat() {
+         getCanEat().putAll(Map.of(Gusin.class, 90, Plant.class, 100));
+     }
++
+     @Override
+     public void eatAnimal() {
+-        List<Animal> animalsForEat = animalsForEat();
+-        Animal animal = animalsForEat.get(Menu.random.nextInt(animalsForEat.size()));
+-        if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
+-                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+-                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
++        List<Animal> animalsCanBeEaten = animalsForEat();
++        Animal animal = animalsCanBeEaten.get(Menu.random.nextInt(animalsCanBeEaten.size()));
++        if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
++            double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
++            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+             System.out.printf("%s ate %s\n", getView(), animal.getView());
+             animal.die();
+         }
+     }
++
+     public void eat() {
+         if (getHealth() >= MAX_HEALTH & checkEatExists())
+             return;
+-        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {
++        if (Menu.random.nextInt(VARIANTS_TO_EAT) == 0) {
+             eatAnimal();
+         } else
+             eatPlant();
+     }
+-
+     public void run() {
+         checkHealth();
+         eat();
+Index: .idea/libraries/object_mapper_1_1_68.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/object_mapper_1_1_68.xml b/.idea/libraries/object_mapper_1_1_68.xml
+new file mode 100644
+--- /dev/null	(date 1695027657824)
++++ b/.idea/libraries/object_mapper_1_1_68.xml	(date 1695027657824)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="object-mapper-1.1.68">
++    <CLASSES>
++      <root url="jar://$USER_HOME$/Desktop/object-mapper-1.1.68.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: src/animals/Animal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals;\r\n\r\nimport exceptions.ClassNotExistException;\r\nimport general.*;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.stream.Collectors;\r\n\r\nimport static general.Constants.ANIMAL_FOR_GENERATE;\r\n\r\n@Getter\r\n@Setter\r\npublic abstract class Animal extends Organism {\r\n    private Location[][] island;\r\n    private Location location;\r\n    private double health = 50;\r\n    private boolean isCanGenerate = true;\r\n    private boolean isAlive = true;\r\n    private final Map<Class<?>, Integer> canEat = new HashMap<>();\r\n    private String view;\r\n    private double weight;\r\n    private int maxQuantityInLocation;\r\n    private double kgEnoughFood;\r\n    private int speed;\r\n\r\n    public abstract boolean checkEatExists();\r\n\r\n    public void move() {\r\n        int speed = getSpeed();\r\n        int steps = Menu.random.nextInt(speed + 1);\r\n        if (steps > 0) {\r\n            for (int i = 0; i < steps; i++)\r\n                changeLocation();\r\n            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_MOVE);\r\n            System.out.printf(\"%s move at %s\\n\", getView(), getLocation());\r\n        }\r\n    }\r\n    public void generate() {\r\n        long countThisKind = getLocation().getAnimalList().stream()\r\n                .filter(x -> x.getClass().equals(this.getClass()))\r\n                .count();\r\n        if (countThisKind < getMaxQuantityInLocation() && countThisKind > ANIMAL_FOR_GENERATE && isCanGenerate()) {\r\n            Animal animal = getLocation().getAnimalList().stream()\r\n                    .skip(Menu.random.nextInt(getLocation().getAnimalList().size()-1))\r\n                    .findFirst().get();\r\n            Animal child = null;\r\n            try {\r\n                child =  new ChildrenFactory().getChild(animal.getClass());\r\n            } catch (ClassNotExistException e) {\r\n                throw new RuntimeException(e);\r\n            }\r\n            getLocation().getAnimalList().add(child);\r\n            child.setLocation(getLocation());\r\n            child.setIsland(getIsland());\r\n            setCanGenerate(false);\r\n            animal.setCanGenerate(false);\r\n            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_GENERATION);\r\n            System.out.printf(\"%s and %s have a child\\n\", getView(), animal.getView());\r\n        }\r\n    }\r\n\r\n\r\n    public void changeLocation() {\r\n        int height = getLocation().getHeight();\r\n        int width = getLocation().getWidth();\r\n        Direction direction = Direction.values()[Menu.random.nextInt(Direction.values().length)];\r\n        long countOfThisKind = getIsland()[width][height - 1].getAnimalList().stream()\r\n                .filter(x -> x.getClass().equals(this.getClass()))\r\n                .count();\r\n        switch (direction) {\r\n            case UP -> {\r\n                if (height > 0 && countOfThisKind < getMaxQuantityInLocation()) {\r\n                    getIsland()[width][height].getAnimalList().remove(this);\r\n                    setLocation(getIsland()[width][--height]);\r\n                    getIsland()[width][height].getAnimalList().add(this);\r\n                }\r\n            }\r\n            case DOWN -> {\r\n                if (height < getIsland().length && countOfThisKind < getMaxQuantityInLocation()) {\r\n                    getIsland()[width][height].getAnimalList().remove(this);\r\n                    setLocation(getIsland()[width][++height]);\r\n                    getIsland()[width][height].getAnimalList().add(this);\r\n                }\r\n            }\r\n            case LEFT -> {\r\n                if (width > 0 && countOfThisKind < getMaxQuantityInLocation()) {\r\n                    getIsland()[width][height].getAnimalList().remove(this);\r\n                    setLocation(getIsland()[--width][height]);\r\n                    getIsland()[width][height].getAnimalList().add(this);\r\n                }\r\n            }\r\n            case RIGHT -> {\r\n                if (width < getIsland()[height].length && countOfThisKind < getMaxQuantityInLocation()) {\r\n                    getIsland()[width][height].getAnimalList().remove(this);\r\n                    setLocation(getIsland()[++width][height]);\r\n                    getIsland()[width][height].getAnimalList().add(this);\r\n                }\r\n            }\r\n            case STAY_OUT -> { return;\r\n            }\r\n        }\r\n    }\r\n\r\n    public List<Animal> animalsForEat() {\r\n        return getLocation().getAnimalList().stream()\r\n                .filter(x -> canEat.containsKey(x.getClass()))\r\n                .collect(Collectors.toList());\r\n    }\r\n\r\n    @Override\r\n    public void die() {\r\n        getLocation().getAnimalList().remove(this);\r\n        setAlive(false);\r\n    }\r\n\r\n    public void checkHealth() {\r\n        if (getHealth() <= 0)\r\n            die();\r\n    }\r\n\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/Animal.java b/src/animals/Animal.java
+--- a/src/animals/Animal.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/Animal.java	(date 1695790313661)
+@@ -6,6 +6,7 @@
+ import lombok.Setter;
+ 
+ import java.util.HashMap;
++import java.util.Iterator;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.stream.Collectors;
+@@ -45,6 +46,7 @@
+                 .count();
+         if (countThisKind < getMaxQuantityInLocation() && countThisKind > ANIMAL_FOR_GENERATE && isCanGenerate()) {
+             Animal animal = getLocation().getAnimalList().stream()
++                    .filter(x->this.getClass()==x.getClass())
+                     .skip(Menu.random.nextInt(getLocation().getAnimalList().size()-1))
+                     .findFirst().get();
+             Animal child = null;
+@@ -113,8 +115,16 @@
+ 
+     @Override
+     public void die() {
+-        getLocation().getAnimalList().remove(this);
+         setAlive(false);
++        List<Animal> animals=getLocation().getAnimalList();
++        Iterator it=animals.iterator();
++        while (it.hasNext()) {
++            if(it.next().equals(this)) {
++                it.remove();
++                break;
++            }
++        }
++        System.out.printf("%s die\n", getView());
+     }
+ 
+     public void checkHealth() {
+Index: src/animals/herbivores/Herbivore.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.herbivores;\r\n\r\nimport animals.*;\r\nimport general.Menu;\r\nimport plant.*;\r\n\r\nimport java.util.*;\r\n\r\nimport static general.Constants.*;\r\n\r\npublic abstract class Herbivore extends Animal implements EatPlant {\r\n    public void eatPlant() {\r\n        if (getHealth() >= MAX_HEALTH & checkEatExists())\r\n            return;\r\n        List<Plant> plantsList = getLocation().getPlantsList();\r\n        Plant plant = plantsList.get(Menu.random.nextInt(plantsList.size()));\r\n        if (getCanEat().containsKey(plant.getClass())) {\r\n            double newHealth = getHealth() + (plant.getWeight() * PERCENT / getKgEnoughFood());\r\n            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n            System.out.printf(\"%s ate %s\\n\", getView(), plant.getView());\r\n            plant.die();\r\n        }\r\n    }\r\n    public void run() {\r\n        checkHealth();\r\n        eatPlant();\r\n        generate();\r\n        move();\r\n    }\r\n\r\n    public boolean checkEatExists() {\r\n        return !getLocation().getPlantsList().isEmpty();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/herbivores/Herbivore.java b/src/animals/herbivores/Herbivore.java
+--- a/src/animals/herbivores/Herbivore.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/herbivores/Herbivore.java	(date 1695790313618)
+@@ -22,10 +22,10 @@
+         }
+     }
+     public void run() {
+-        checkHealth();
+-        eatPlant();
+-        generate();
+-        move();
++            checkHealth();
++            eatPlant();
++            generate();
++            move();
+     }
+ 
+     public boolean checkEatExists() {
+Index: src/animals/predators/Wolf.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.predators;\r\n\r\nimport animals.Animal;\r\nimport animals.herbivores.*;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.Random;\r\n\r\nimport static general.Constants.*;\r\n\r\npublic class Wolf extends Predator {\r\n    private final String view = \"\\uD83D\\uDC3A\";\r\n    private final int weight = 50;\r\n    private final int maxQuantityInLocation = 30;\r\n    private final int speed = 3;\r\n    private final int kgEnoughFood = 8;\r\n    private List<Wolf> wolvesAtLocation;\r\n    public Wolf() {\r\n        setView(view);\r\n        setWeight(weight);\r\n        setMaxQuantityInLocation(maxQuantityInLocation);\r\n        setSpeed(speed);\r\n        setKgEnoughFood(kgEnoughFood);\r\n        initCanEat();\r\n    }\r\n    public List<Wolf> getWolvesAtLocation() {\r\n        wolvesAtLocation = new ArrayList<>();\r\n        for (Animal animal : getLocation().getAnimalList()) {\r\n            if (animal instanceof Wolf)\r\n                wolvesAtLocation.add((Wolf) animal);\r\n        }\r\n        return wolvesAtLocation;\r\n    }\r\n    public void initCanEat() {\r\n        getCanEat().putAll(Map.of(Horse.class, 10, Deer.class, 15, Rabbit.class, 60, Mouse.class, 80, Goat.class, 60,\r\n                                  Sheep.class, 70, Boar.class, 15, Buffalo.class, 10, Duck.class, 40));\r\n    }\r\n\r\n    public void eatAnimal() {\r\n        Random random = new Random();\r\n        List<Animal> animalsToEat = animalsForEat();\r\n            Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));\r\n            if (random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {\r\n                    double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());\r\n                    setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n                System.out.printf(\"%s ate %s\\n\", getView(), animal.getView());\r\n                animal.die();\r\n            }\r\n        }\r\n    @Override\r\n    public void run() {\r\n        checkHealth();\r\n        if (getHealth() < MAX_HEALTH & checkEatExists()) {\r\n            if(getWolvesAtLocation().size()>MIN_COUNT_FOR_WOLF_FLOCK) {\r\n                WolfFlock wolfFlock = new WolfFlock(getWolvesAtLocation());\r\n                wolfFlock.eat();\r\n            } else eatAnimal();\r\n        }\r\n        generate();\r\n        move();\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/predators/Wolf.java b/src/animals/predators/Wolf.java
+--- a/src/animals/predators/Wolf.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/predators/Wolf.java	(date 1695790313568)
+@@ -40,8 +40,8 @@
+ 
+     public void eatAnimal() {
+         Random random = new Random();
+-        List<Animal> animalsToEat = animalsForEat();
+-            Animal animal = animalsToEat.get(random.nextInt(animalsToEat.size()));
++        List<Animal> animalsCanBeEaten = animalsForEat();
++            Animal animal = animalsCanBeEaten.get(random.nextInt(animalsCanBeEaten.size()));
+             if (random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
+                     double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+                     setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+Index: src/animals/herbivores/Boar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.herbivores;\r\n\r\nimport animals.Animal;\r\nimport animals.EatAnimal;\r\nimport general.Menu;\r\nimport plant.Plant;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport static general.Constants.*;\r\npublic class Boar extends Herbivore implements EatAnimal {\r\n    private final String view = \"\\uD83D\\uDC17\";\r\n    private final int weight = 400;\r\n    private final int maxQuantityInLocation = 50;\r\n    private final int speed = 2;\r\n    private final int kgEnoughFood = 50;\r\n\r\n    public Boar() {\r\n        setView(view);\r\n        setWeight(weight);\r\n        setMaxQuantityInLocation(maxQuantityInLocation);\r\n        setSpeed(speed);\r\n        setKgEnoughFood(kgEnoughFood);\r\n        initCanEat();\r\n    }\r\n    public void initCanEat() {\r\n        getCanEat().putAll(Map.of(Mouse.class, 50, Gusin.class, 90, Plant.class, 100 ));\r\n    }\r\n\r\n    @Override\r\n    public void eatAnimal() {\r\n        List<Animal> animalsToEat = animalsForEat();\r\n        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));\r\n        if (Menu.random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {\r\n            double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());\r\n            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n            animal.die();\r\n            System.out.printf(\"%s ate %s\\n\", getView(), animal.getView());\r\n\r\n        }\r\n    }\r\n    public void eat() {\r\n        if (getHealth() >= MAX_HEALTH & checkEatExists())\r\n            return;\r\n        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {\r\n            eatAnimal();\r\n        } else\r\n            eatPlant();\r\n    }\r\n\r\n    public void run() {\r\n        eat();\r\n        generate();\r\n        move();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/herbivores/Boar.java b/src/animals/herbivores/Boar.java
+--- a/src/animals/herbivores/Boar.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/herbivores/Boar.java	(date 1695790313610)
+@@ -4,10 +4,12 @@
+ import animals.EatAnimal;
+ import general.Menu;
+ import plant.Plant;
++
+ import java.util.List;
+ import java.util.Map;
+ 
+ import static general.Constants.*;
++
+ public class Boar extends Herbivore implements EatAnimal {
+     private final String view = "\uD83D\uDC17";
+     private final int weight = 400;
+@@ -23,14 +25,15 @@
+         setKgEnoughFood(kgEnoughFood);
+         initCanEat();
+     }
++
+     public void initCanEat() {
+-        getCanEat().putAll(Map.of(Mouse.class, 50, Gusin.class, 90, Plant.class, 100 ));
++        getCanEat().putAll(Map.of(Mouse.class, 50, Gusin.class, 90, Plant.class, 100));
+     }
+ 
+     @Override
+     public void eatAnimal() {
+-        List<Animal> animalsToEat = animalsForEat();
+-        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
++        List<Animal> animalsCanBeEaten = animalsForEat();
++        Animal animal = animalsCanBeEaten.get(Menu.random.nextInt(animalsCanBeEaten.size()));
+         if (Menu.random.nextInt(PERCENT) <= getCanEat().get(animal.getClass())) {
+             double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+             setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+@@ -39,16 +42,18 @@
+ 
+         }
+     }
++
+     public void eat() {
+         if (getHealth() >= MAX_HEALTH & checkEatExists())
+             return;
+-        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {
++        if (Menu.random.nextInt(VARIANTS_TO_EAT) == 0) {
+             eatAnimal();
+         } else
+             eatPlant();
+     }
+ 
+     public void run() {
++        checkHealth();
+         eat();
+         generate();
+         move();
+Index: src/animals/herbivores/Goat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.herbivores;\r\n\r\nimport plant.*;\r\npublic class Goat extends Herbivore {\r\n    private final String view= \"\\uD83D\\uDC10\";\r\n    private final int weight=60;\r\n    private final int maxQuantityInLocation=140;\r\n    private final int speed=3;\r\n    private final int kgEnoughFood=10;\r\n\r\n    public Goat() {\r\n        setView(view);\r\n        setWeight(weight);\r\n        setMaxQuantityInLocation(maxQuantityInLocation);\r\n        setSpeed(speed);\r\n        setKgEnoughFood(kgEnoughFood);\r\n        initCanEat();\r\n    }\r\n    public void initCanEat(){\r\n        getCanEat().put(Plant.class, 100);\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/herbivores/Goat.java b/src/animals/herbivores/Goat.java
+--- a/src/animals/herbivores/Goat.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/herbivores/Goat.java	(date 1695014943319)
+@@ -1,6 +1,6 @@
+ package animals.herbivores;
+ 
+-import plant.*;
++import plant.Plant;
+ public class Goat extends Herbivore {
+     private final String view= "\uD83D\uDC10";
+     private final int weight=60;
+@@ -15,6 +15,7 @@
+         setSpeed(speed);
+         setKgEnoughFood(kgEnoughFood);
+         initCanEat();
++
+     }
+     public void initCanEat(){
+         getCanEat().put(Plant.class, 100);
+Index: src/animals/herbivores/Mouse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.herbivores;\r\n\r\nimport animals.*;\r\nimport general.Menu;\r\nimport plant.Plant;\r\nimport java.util.*;\r\nimport static general.Constants.*;\r\n\r\npublic class Mouse extends Herbivore implements EatAnimal {\r\n    private final String view= \"\\uD83D\\uDC01\";\r\n    private final double weight = 0.05;\r\n    private final int maxQuantityInLocation = 500;\r\n    private final int speed = 1;\r\n    private final double kgEnoughFood = 0.01;\r\n\r\n    public Mouse() {\r\n        setView(view);\r\n        setWeight(weight);\r\n        setMaxQuantityInLocation(maxQuantityInLocation);\r\n        setSpeed(speed);\r\n        setKgEnoughFood(kgEnoughFood);\r\n        initCanEat();\r\n    }\r\n    public void initCanEat() {\r\n        getCanEat().putAll(Map.of(Plant.class, 100, Gusin.class, 90));\r\n    }\r\n    public void eatAnimal() {\r\n        List<Animal> animalsToEat = animalsForEat();\r\n        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));\r\n        if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {\r\n                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());\r\n                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n            System.out.printf(\"%s ate %s\\n\", getView(), animal.getView());\r\n            animal.die();\r\n        }\r\n    }\r\n    public void eat() {\r\n        if (getHealth() >= MAX_HEALTH & checkEatExists())\r\n            return;\r\n        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {\r\n            eatAnimal();\r\n        } else\r\n            eatPlant();\r\n    }\r\n\r\n    public void run() {\r\n        checkHealth();\r\n        eat();\r\n        generate();\r\n        move();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/herbivores/Mouse.java b/src/animals/herbivores/Mouse.java
+--- a/src/animals/herbivores/Mouse.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/herbivores/Mouse.java	(date 1695790313636)
+@@ -3,11 +3,13 @@
+ import animals.*;
+ import general.Menu;
+ import plant.Plant;
++
+ import java.util.*;
++
+ import static general.Constants.*;
+ 
+ public class Mouse extends Herbivore implements EatAnimal {
+-    private final String view= "\uD83D\uDC01";
++    private final String view = "\uD83D\uDC01";
+     private final double weight = 0.05;
+     private final int maxQuantityInLocation = 500;
+     private final int speed = 1;
+@@ -21,23 +23,26 @@
+         setKgEnoughFood(kgEnoughFood);
+         initCanEat();
+     }
++
+     public void initCanEat() {
+         getCanEat().putAll(Map.of(Plant.class, 100, Gusin.class, 90));
+     }
++
+     public void eatAnimal() {
+-        List<Animal> animalsToEat = animalsForEat();
+-        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
+-        if (Menu.random.nextInt(PERCENT+1) <= getCanEat().get(animal.getClass())) {
+-                double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+-                setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
++        List<Animal> animalsCanBeEaten = animalsForEat();
++        Animal animal = animalsCanBeEaten.get(Menu.random.nextInt(animalsCanBeEaten.size()));
++        if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
++            double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
++            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+             System.out.printf("%s ate %s\n", getView(), animal.getView());
+             animal.die();
+         }
+     }
++
+     public void eat() {
+         if (getHealth() >= MAX_HEALTH & checkEatExists())
+             return;
+-        if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {
++        if (Menu.random.nextInt(VARIANTS_TO_EAT) == 0) {
+             eatAnimal();
+         } else
+             eatPlant();
+Index: src/animals/predators/Predator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package animals.predators;\r\n\r\nimport animals.*;\r\nimport general.Menu;\r\nimport java.util.*;\r\nimport static general.Constants.*;\r\n\r\npublic abstract class Predator extends Animal implements EatAnimal {\r\n    @Override\r\n    public void eatAnimal() {\r\n        if (getHealth() >= MAX_HEALTH & checkEatExists())\r\n            return;\r\n        List<Animal> animalsToEat = animalsForEat();\r\n        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));\r\n        if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {\r\n            double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());\r\n            setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);\r\n            System.out.printf(\"%s ate %s\\n\", getView(), animal.getView());\r\n            animal.die();\r\n        }\r\n    }\r\n\r\n    public boolean checkEatExists() {\r\n        List<Animal> animals = getLocation().getAnimalList();\r\n        for (Animal animal : animals) {\r\n            if (animal.getClass() == this.getClass())\r\n                return true;\r\n        }\r\n        return false;\r\n    }\r\n    public void run() {\r\n        checkHealth();\r\n        eatAnimal();\r\n        generate();\r\n        move();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/animals/predators/Predator.java b/src/animals/predators/Predator.java
+--- a/src/animals/predators/Predator.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/animals/predators/Predator.java	(date 1695790313544)
+@@ -10,8 +10,8 @@
+     public void eatAnimal() {
+         if (getHealth() >= MAX_HEALTH & checkEatExists())
+             return;
+-        List<Animal> animalsToEat = animalsForEat();
+-        Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
++        List<Animal> animalsCanBeEaten = animalsForEat();
++        Animal animal = animalsCanBeEaten.get(Menu.random.nextInt(animalsCanBeEaten.size()));
+         if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
+             double newHealth = getHealth() + (animal.getWeight() * PERCENT / getKgEnoughFood());
+             setHealth(newHealth > MAX_HEALTH ? MAX_HEALTH : newHealth);
+@@ -21,13 +21,9 @@
+     }
+ 
+     public boolean checkEatExists() {
+-        List<Animal> animals = getLocation().getAnimalList();
+-        for (Animal animal : animals) {
+-            if (animal.getClass() == this.getClass())
+-                return true;
+-        }
+-        return false;
++        return !animalsForEat().isEmpty();
+     }
++
+     public void run() {
+         checkHealth();
+         eatAnimal();
+Index: src/general/Island.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package general;\r\n\r\nimport animals.Animal;\r\n\r\nimport java.util.List;\r\nimport java.util.concurrent.Executors;\r\nimport java.util.concurrent.ScheduledExecutorService;\r\nimport java.util.concurrent.TimeUnit;\r\n\r\npublic class Island {\r\n    private Location[][] locations;\r\n\r\n    public Location[][] getLocations() {\r\n        return locations;\r\n    }\r\n    public void setLocations(Location[][] locations) {\r\n        this.locations = locations;\r\n    }\r\n    public void start() {\r\n        ConsoleView consoleView=new ConsoleView(locations);\r\n        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);\r\n        for (int i = 0; i < locations.length; i++) {\r\n            for (int j = 0; j < locations[i].length; j++) {\r\n                try {\r\n                    Thread.sleep(2000);\r\n                } catch (InterruptedException e) {\r\n                    throw new RuntimeException(e);\r\n                }\r\n                executorService.scheduleAtFixedRate(locations[i][j].getAnimalList().get(0), 1, 10, TimeUnit.SECONDS);\r\n               List<Animal> animals= locations[i][j].getAnimalList();\r\n                animals.forEach(x->executorService.scheduleAtFixedRate(x, 1, 10, TimeUnit.SECONDS));\r\n               consoleView.showCountAnimals();\r\n               consoleView.showCountPlants();\r\n            }\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/general/Island.java b/src/general/Island.java
+--- a/src/general/Island.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/general/Island.java	(date 1695790313577)
+@@ -1,24 +1,27 @@
+ package general;
+ 
+ import animals.Animal;
+-
+-import java.util.List;
+-import java.util.concurrent.Executors;
++import java.util.Arrays;
+ import java.util.concurrent.ScheduledExecutorService;
++import java.util.concurrent.ScheduledFuture;
++import java.util.concurrent.ScheduledThreadPoolExecutor;
+ import java.util.concurrent.TimeUnit;
+ 
+ public class Island {
+     private Location[][] locations;
++    private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(10);
+ 
+     public Location[][] getLocations() {
+         return locations;
+     }
++
+     public void setLocations(Location[][] locations) {
+         this.locations = locations;
+     }
++
+     public void start() {
+-        ConsoleView consoleView=new ConsoleView(locations);
+-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
++        ConsoleView consoleView = new ConsoleView(locations);
++
+         for (int i = 0; i < locations.length; i++) {
+             for (int j = 0; j < locations[i].length; j++) {
+                 try {
+@@ -26,12 +29,26 @@
+                 } catch (InterruptedException e) {
+                     throw new RuntimeException(e);
+                 }
+-                executorService.scheduleAtFixedRate(locations[i][j].getAnimalList().get(0), 1, 10, TimeUnit.SECONDS);
+-               List<Animal> animals= locations[i][j].getAnimalList();
+-                animals.forEach(x->executorService.scheduleAtFixedRate(x, 1, 10, TimeUnit.SECONDS));
+-               consoleView.showCountAnimals();
+-               consoleView.showCountPlants();
++                for (Animal animal : locations[i][j].getAnimalList()) {
++                    final ScheduledFuture<?> future = executorService.scheduleWithFixedDelay(() -> {
++                        if (animal.isAlive()) {
++                         animal.run();
++                        }
++                    }, 1, 1, TimeUnit.SECONDS);
++
++                }
+             }
+         }
+-    }
+-}
+\ No newline at end of file
++           checkEndOfIsland(locations);
++
++        }
++        public void checkEndOfIsland (Location[][]locations){
++            if (Arrays.stream(locations)
++                    .map(row -> Arrays.stream(row)
++                            .allMatch(x -> x.getAnimalList()
++                                    .isEmpty()))
++                    .isParallel()) {
++                executorService.shutdown();
++            }
++        }
++    }
+\ No newline at end of file
+Index: src/plant/Plant.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package plant;\r\n\r\nimport general.Location;\r\nimport general.Organism;\r\nimport lombok.Getter;\r\n\r\n@Getter\r\npublic class Plant extends Organism {\r\n    public static final int MAX_QUANTITY_AT_LOCATION = 200;\r\n    private Location[][] island;\r\n    private Location location;\r\n    private final String view = \"\\uD83C\\uDF33\";\r\n    private final int weight = 1;\r\n    private boolean isCanGenerate=true;\r\n    private boolean isAlive=true;\r\n    public void setIsland(Location [][] island) {\r\n        this.island = island;\r\n    }\r\n    public void setLocation(Location location) {\r\n        this.location = location;\r\n    }\r\n    public void setCanGenerate(boolean canGenerate) {\r\n        isCanGenerate = canGenerate;\r\n    }\r\n    public void setAlive(boolean alive) {\r\n        isAlive = alive;\r\n    }\r\n    @Override\r\n    public void generate() {\r\n        if (getLocation().getPlantsList().size() < MAX_QUANTITY_AT_LOCATION) {\r\n            Plant plant = new Plant();\r\n            plant.setLocation(getLocation());\r\n            getLocation().getPlantsList().add(plant);\r\n            setCanGenerate(false);\r\n        }\r\n    }\r\n    @Override\r\n    public void die() {\r\n        getLocation().getPlantsList().remove(this);\r\n        setAlive(false);\r\n    }\r\n    public void run() {\r\n        if (isAlive) {\r\n            generate();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/plant/Plant.java b/src/plant/Plant.java
+--- a/src/plant/Plant.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/plant/Plant.java	(date 1695790313602)
+@@ -4,6 +4,10 @@
+ import general.Organism;
+ import lombok.Getter;
+ 
++import java.util.Iterator;
++import java.util.List;
++import java.util.concurrent.ScheduledExecutorService;
++
+ @Getter
+ public class Plant extends Organism {
+     public static final int MAX_QUANTITY_AT_LOCATION = 200;
+@@ -11,34 +15,52 @@
+     private Location location;
+     private final String view = "\uD83C\uDF33";
+     private final int weight = 1;
+-    private boolean isCanGenerate=true;
+-    private boolean isAlive=true;
+-    public void setIsland(Location [][] island) {
++    private boolean isCanGenerate = true;
++    private boolean isAlive = true;
++    ScheduledExecutorService executorService = null;
++
++    public void setIsland(Location[][] island) {
+         this.island = island;
+     }
++
+     public void setLocation(Location location) {
+         this.location = location;
+     }
++
+     public void setCanGenerate(boolean canGenerate) {
+         isCanGenerate = canGenerate;
+     }
++
+     public void setAlive(boolean alive) {
+         isAlive = alive;
+     }
++
+     @Override
+     public void generate() {
+         if (getLocation().getPlantsList().size() < MAX_QUANTITY_AT_LOCATION) {
+             Plant plant = new Plant();
+             plant.setLocation(getLocation());
++            List<Plant> plants = getLocation().getPlantsList();
++            plants.add(plant);
+             getLocation().getPlantsList().add(plant);
+             setCanGenerate(false);
+         }
+     }
++
+     @Override
+     public void die() {
+-        getLocation().getPlantsList().remove(this);
+         setAlive(false);
++        List<Plant> plants = getLocation().getPlantsList();
++        Iterator it = plants.iterator();
++        while (it.hasNext()) {
++            if (it.next().equals(this)) {
++                System.out.printf("%s die\n", getView());
++                it.remove();
++                break;
++            }
++        }
+     }
++
+     public void run() {
+         if (isAlive) {
+             generate();
+Index: src/general/Location.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package general;\r\n\r\nimport animals.*;\r\nimport animals.herbivores.*;\r\nimport animals.predators.*;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\nimport plant.*;\r\n\r\nimport java.util.*;\r\n@Getter\r\n@Setter\r\npublic class Location {\r\n    int width;\r\n    int height;\r\n    private List<Animal> animalList;\r\n    private List<Plant> plantsList;\r\n\r\n    public Location(int width, int height) {\r\n        this.width = width;\r\n        this.height = height;\r\n        setAnimalList();\r\n        setPlantsList();\r\n    }\r\n    public void setAnimalList() {\r\n        animalList = new ArrayList<>();\r\n        Set<Animal> allSpecies = getAllSpecies();\r\n        for (Animal animal : allSpecies) {\r\n            int maxQuantityInLocation = animal.getMaxQuantityInLocation();\r\n            for (int i = 0; i < Menu.random.nextInt(maxQuantityInLocation + 1); i++) {\r\n                if (animal.getClass()==Bear.class) {\r\n                    animalList.add(new Bear());\r\n                } else if (animal.getClass()==Boa.class) {\r\n                    animalList.add(new Boa());\r\n                } else if (animal.getClass()==Boar.class) {\r\n                    animalList.add(new Boar());\r\n                } else if (animal.getClass()==Buffalo.class) {\r\n                    animalList.add(new Buffalo());\r\n                } else if (animal.getClass()==Deer.class) {\r\n                    animalList.add(new Deer());\r\n                } else if (animal.getClass()==Duck.class) {\r\n                    animalList.add(new Duck());\r\n                } else if (animal.getClass()==Eagle.class) {\r\n                    animalList.add(new Eagle());\r\n                } else if (animal.getClass()==Fox.class) {\r\n                    animalList.add(new Fox());\r\n                } else if (animal.getClass()==Goat.class) {\r\n                    animalList.add(new Goat());\r\n                } else if (animal.getClass()==Gusin.class) {\r\n                    animalList.add(new Gusin());\r\n                } else if (animal.getClass()==Horse.class) {\r\n                    animalList.add(new Horse());\r\n                } else if (animal.getClass()==Mouse.class) {\r\n                    animalList.add(new Mouse());\r\n                } else if (animal.getClass()==Rabbit.class) {\r\n                    animalList.add(new Rabbit());\r\n                } else if (animal.getClass()==Sheep.class) {\r\n                    animalList.add(new Sheep());\r\n                } else if (animal.getClass()==Wolf.class) {\r\n                    animalList.add(new Wolf());\r\n                } else\r\n                    break;\r\n\r\n            }\r\n        }\r\n\r\n    }\r\n    public void setPlantsList() {\r\n        plantsList = new ArrayList<>();\r\n                for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {\r\n                    plantsList.add(new Plant());\r\n        }\r\n    }\r\n    public Set<Animal> getAllSpecies() {\r\n        HashSet<Animal> animals = new HashSet<>();\r\n        animals.add(new Wolf());\r\n        animals.add(new Boa());\r\n        animals.add(new Fox());\r\n        animals.add(new Bear());\r\n        animals.add(new Eagle());\r\n        animals.add(new Horse());\r\n        animals.add(new Deer());\r\n        animals.add(new Rabbit());\r\n        animals.add(new Mouse());\r\n        animals.add(new Goat());\r\n        animals.add(new Sheep());\r\n        animals.add(new Boar());\r\n        animals.add(new Buffalo());\r\n        animals.add(new Duck());\r\n        animals.add(new Gusin());\r\n        return animals;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Location{\" +\r\n                \"width=\" + width +\r\n                \", height=\" + height +\r\n                \", animalList size=\" + animalList.size() +\r\n                \", plantsList size=\" + plantsList.size() +\r\n                '}';\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/general/Location.java b/src/general/Location.java
+--- a/src/general/Location.java	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/src/general/Location.java	(date 1695790313644)
+@@ -1,13 +1,17 @@
+ package general;
+ 
+-import animals.*;
++import animals.Animal;
+ import animals.herbivores.*;
+ import animals.predators.*;
+ import lombok.Getter;
+ import lombok.Setter;
+-import plant.*;
++import plant.Plant;
+ 
+-import java.util.*;
++import java.util.ArrayList;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Set;
++
+ @Getter
+ @Setter
+ public class Location {
+@@ -22,41 +26,42 @@
+         setAnimalList();
+         setPlantsList();
+     }
++
+     public void setAnimalList() {
+         animalList = new ArrayList<>();
+         Set<Animal> allSpecies = getAllSpecies();
+         for (Animal animal : allSpecies) {
+             int maxQuantityInLocation = animal.getMaxQuantityInLocation();
+             for (int i = 0; i < Menu.random.nextInt(maxQuantityInLocation + 1); i++) {
+-                if (animal.getClass()==Bear.class) {
++                if (animal.getClass() == Bear.class) {
+                     animalList.add(new Bear());
+-                } else if (animal.getClass()==Boa.class) {
++                } else if (animal.getClass() == Boa.class) {
+                     animalList.add(new Boa());
+-                } else if (animal.getClass()==Boar.class) {
++                } else if (animal.getClass() == Boar.class) {
+                     animalList.add(new Boar());
+-                } else if (animal.getClass()==Buffalo.class) {
++                } else if (animal.getClass() == Buffalo.class) {
+                     animalList.add(new Buffalo());
+-                } else if (animal.getClass()==Deer.class) {
++                } else if (animal.getClass() == Deer.class) {
+                     animalList.add(new Deer());
+-                } else if (animal.getClass()==Duck.class) {
++                } else if (animal.getClass() == Duck.class) {
+                     animalList.add(new Duck());
+-                } else if (animal.getClass()==Eagle.class) {
++                } else if (animal.getClass() == Eagle.class) {
+                     animalList.add(new Eagle());
+-                } else if (animal.getClass()==Fox.class) {
++                } else if (animal.getClass() == Fox.class) {
+                     animalList.add(new Fox());
+-                } else if (animal.getClass()==Goat.class) {
++                } else if (animal.getClass() == Goat.class) {
+                     animalList.add(new Goat());
+-                } else if (animal.getClass()==Gusin.class) {
++                } else if (animal.getClass() == Gusin.class) {
+                     animalList.add(new Gusin());
+-                } else if (animal.getClass()==Horse.class) {
++                } else if (animal.getClass() == Horse.class) {
+                     animalList.add(new Horse());
+-                } else if (animal.getClass()==Mouse.class) {
++                } else if (animal.getClass() == Mouse.class) {
+                     animalList.add(new Mouse());
+-                } else if (animal.getClass()==Rabbit.class) {
++                } else if (animal.getClass() == Rabbit.class) {
+                     animalList.add(new Rabbit());
+-                } else if (animal.getClass()==Sheep.class) {
++                } else if (animal.getClass() == Sheep.class) {
+                     animalList.add(new Sheep());
+-                } else if (animal.getClass()==Wolf.class) {
++                } else if (animal.getClass() == Wolf.class) {
+                     animalList.add(new Wolf());
+                 } else
+                     break;
+@@ -65,12 +70,14 @@
+         }
+ 
+     }
++
+     public void setPlantsList() {
+         plantsList = new ArrayList<>();
+-                for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION+1); i++) {
+-                    plantsList.add(new Plant());
++        for (int i = 0; i < Menu.random.nextInt(Plant.MAX_QUANTITY_AT_LOCATION + 1); i++) {
++            plantsList.add(new Plant());
+         }
+     }
++
+     public Set<Animal> getAllSpecies() {
+         HashSet<Animal> animals = new HashSet<>();
+         animals.add(new Wolf());
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"InspectionProjectProfileManager\">\r\n  <profile version=\"1.0\">\r\n    <option name=\"myName\" value=\"Project Default\" />\r\n    <inspection_tool class=\"DuplicatedCode\" enabled=\"true\" level=\"WEAK WARNING\" enabled_by_default=\"true\">\r\n      <Languages>\r\n        <language minSize=\"74\" name=\"Java\" />\r\n      </Languages>\r\n    </inspection_tool>\r\n    <inspection_tool class=\"IteratorNextDoesNotThrowNoSuchElementException\" enabled=\"true\" level=\"WARNING\" enabled_by_default=\"true\" />\r\n    <inspection_tool class=\"ResultOfObjectAllocationIgnored\" enabled=\"true\" level=\"WARNING\" enabled_by_default=\"true\" />\r\n    <inspection_tool class=\"VariableNotUsedInsideIf\" enabled=\"true\" level=\"WARNING\" enabled_by_default=\"true\" />\r\n  </profile>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+--- a/.idea/inspectionProfiles/Project_Default.xml	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1695632058171)
+@@ -1,6 +1,8 @@
+ <component name="InspectionProjectProfileManager">
+   <profile version="1.0">
+     <option name="myName" value="Project Default" />
++    <inspection_tool class="ClassNewInstance" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="ControlFlowStatementWithoutBraces" enabled="false" level="INFORMATION" enabled_by_default="false" />
+     <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+       <Languages>
+         <language minSize="74" name="Java" />
+@@ -8,6 +10,11 @@
+     </inspection_tool>
+     <inspection_tool class="IteratorNextDoesNotThrowNoSuchElementException" enabled="true" level="WARNING" enabled_by_default="true" />
+     <inspection_tool class="ResultOfObjectAllocationIgnored" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="StaticCallOnSubclass" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="StaticFieldReferenceOnSubclass" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="StringConcatenationInFormatCall" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="StringConcatenationInMessageFormatCall" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="SubtractionInCompareTo" enabled="true" level="WARNING" enabled_by_default="true" />
+     <inspection_tool class="VariableNotUsedInsideIf" enabled="true" level="WARNING" enabled_by_default="true" />
+   </profile>
+ </component>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"wildlife\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ae279b04-08ac-4bf2-a4ad-5d624d25587f\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/Animal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/Animal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/herbivores/Boar.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/herbivores/Boar.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/herbivores/Duck.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/herbivores/Duck.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/herbivores/Herbivore.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/herbivores/Herbivore.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/herbivores/Mouse.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/herbivores/Mouse.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/predators/Predator.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/predators/Predator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/predators/Wolf.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/predators/Wolf.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/animals/predators/WolfFlock.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/animals/predators/WolfFlock.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/general/Island.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/general/Island.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeInsightWorkspaceSettings\">\r\n    <option name=\"optimizeImportsOnTheFly\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"temp\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"ROOT_SYNC\" value=\"SYNC\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"6db053c1-2671-4832-af0e-2cd53fd18b51\" />\r\n        <option name=\"url\" value=\"https://github.com/malyniak/wildlife.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/OrganismLife.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2UeTcZ0iRlzbSGdnuaJ5sfLfqCA\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"autoscrollFromSource\" value=\"true\" />\r\n    <option name=\"autoscrollToSource\" value=\"true\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;development&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"animals\" />\r\n      <recent name=\"exceptions\" />\r\n      <recent name=\"animal\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ae279b04-08ac-4bf2-a4ad-5d624d25587f\" name=\"Changes\" comment=\"\" />\r\n      <created>1693299127555</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1693299127555</updated>\r\n      <workItem from=\"1694350457023\" duration=\"1183000\" />\r\n      <workItem from=\"1694351691340\" duration=\"156000\" />\r\n      <workItem from=\"1694352014143\" duration=\"1378000\" />\r\n      <workItem from=\"1694353985421\" duration=\"73000\" />\r\n      <workItem from=\"1694413002881\" duration=\"4275000\" />\r\n      <workItem from=\"1694538961522\" duration=\"798000\" />\r\n      <workItem from=\"1694619508287\" duration=\"7258000\" />\r\n      <workItem from=\"1694668918608\" duration=\"8468000\" />\r\n      <workItem from=\"1694684705309\" duration=\"27000\" />\r\n      <workItem from=\"1694755562823\" duration=\"2157000\" />\r\n      <workItem from=\"1694762456140\" duration=\"5565000\" />\r\n      <workItem from=\"1694800646410\" duration=\"155000\" />\r\n      <workItem from=\"1694843910550\" duration=\"4761000\" />\r\n      <workItem from=\"1694931700814\" duration=\"7399000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/animals/herbivores/Duck.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"15\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <pin-to-top-manager>\r\n      <pinned-members>\r\n        <PinnedItemInfo parentTag=\"Island\" memberName=\"width\" />\r\n        <PinnedItemInfo parentTag=\"Location\" memberName=\"width\" />\r\n        <PinnedItemInfo parentTag=\"animal.Boa\" memberName=\"health\" />\r\n        <PinnedItemInfo parentTag=\"animal.Boa\" memberName=\"isAlive\" />\r\n      </pinned-members>\r\n    </pin-to-top-manager>\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"locations[0][1].animalList\" />\r\n        <watch expression=\"locations[0][1].animalList\" />\r\n        <watch expression=\"locations[0][1].animalList\" />\r\n        <watch expression=\"animals\" />\r\n        <watch expression=\"locations\" language=\"JAVA\" />\r\n        <watch expression=\"locations\" />\r\n        <watch expression=\"this\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6caf3ae77fa96882ba8e7a9b30b956344c849332)
++++ b/.idea/workspace.xml	(date 1695791003059)
+@@ -9,18 +9,28 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
++    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add childrenFactory and streams in class animal">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_annotations.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_databind.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20230618.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/object_mapper_1_1_68.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/general/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/general/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/wildlife.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wildlife.iml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -42,7 +52,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="temp" />
++        <entry key="$PROJECT_DIR$" value="tempDevel" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -89,13 +99,13 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/Desktop/object-mapper-1.1.68.jar&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+@@ -130,8 +140,23 @@
+       <workItem from="1694762456140" duration="5565000" />
+       <workItem from="1694800646410" duration="155000" />
+       <workItem from="1694843910550" duration="4761000" />
+-      <workItem from="1694931700814" duration="7399000" />
++      <workItem from="1694931700814" duration="8705000" />
++      <workItem from="1695014641250" duration="9202000" />
++      <workItem from="1695106648790" duration="2738000" />
++      <workItem from="1695543571143" duration="15000" />
++      <workItem from="1695554229841" duration="35000" />
++      <workItem from="1695554277375" duration="26000" />
++      <workItem from="1695617117580" duration="7917000" />
++    </task>
++    <task id="LOCAL-00001" summary="add childrenFactory and streams in class animal">
++      <option name="closed" value="true" />
++      <created>1694944986306</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1694944986306</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -148,16 +173,11 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="add childrenFactory and streams in class animal" />
++    <option name="LAST_COMMIT_MESSAGE" value="add childrenFactory and streams in class animal" />
++  </component>
+   <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/animals/herbivores/Duck.java</url>
+-          <line>32</line>
+-          <option name="timeStamp" value="15" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+     <pin-to-top-manager>
+       <pinned-members>
+         <PinnedItemInfo parentTag="Island" memberName="width" />
+Index: .idea/libraries/json_20230618.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/json_20230618.xml b/.idea/libraries/json_20230618.xml
+new file mode 100644
+--- /dev/null	(date 1695027548508)
++++ b/.idea/libraries/json_20230618.xml	(date 1695027548508)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="json-20230618">
++    <CLASSES>
++      <root url="jar://$USER_HOME$/Desktop/json-20230618.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
