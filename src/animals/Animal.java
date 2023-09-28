@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static general.Constants.ANIMAL_FOR_GENERATE;
+import static general.Constants.*;
 
 @Getter
 @Setter
@@ -31,16 +31,21 @@ public abstract class Animal extends Organism {
     public abstract boolean checkEatExists();
 
     public void move() {
+        if(getHealth()<DECREASE_HEALTH_AFTER_MOVE) {
+            return;
+        }
         int speed = getSpeed();
         int steps = Menu.random.nextInt(speed + 1);
         if (steps > 0) {
             for (int i = 0; i < steps; i++)
                 changeLocation();
-            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_MOVE);
             System.out.printf("%s move at %s\n", getView(), getLocation());
         }
     }
     public void generate() {
+        if(getHealth()<DECREASE_HEALTH_AFTER_GENERATION) {
+            return;
+        }
         long countThisKind = getLocation().getAnimalList().stream()
                 .filter(x -> x.getClass().equals(this.getClass()))
                 .count();
@@ -60,7 +65,7 @@ public abstract class Animal extends Organism {
             child.setIsland(getIsland());
             setCanGenerate(false);
             animal.setCanGenerate(false);
-            setHealth(getHealth() - Constants.DECREASE_HEALTH_AFTER_GENERATION);
+            setHealth(getHealth() - DECREASE_HEALTH_AFTER_GENERATION);
             System.out.printf("%s and %s have a child\n", getView(), animal.getView());
         }
     }
@@ -125,13 +130,6 @@ public abstract class Animal extends Organism {
             }
         }
         System.out.printf("%s die\n", getView());
-    }
-
-    public boolean checkHealth() {
-        if (getHealth() <= 0) {
-            die();
-            return false;
-        } return true;
     }
 
 }

@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add check if alive in executorService">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_annotations.xml" afterDir="false" />
@@ -18,15 +19,24 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/object_mapper_1_1_68.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add check in executorService">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" afterDir="false" />
+=======
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/general/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Menu.java" afterDir="false" />
@@ -36,6 +46,11 @@
 =======
     <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="" />
 >>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
+=======
+      <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/general/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Constants.java" afterDir="false" />
+    </list>
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +71,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="tempDevel" />
+=======
+        <entry key="$PROJECT_DIR$" value="main" />
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,6 +112,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
@@ -104,7 +126,11 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/Desktop/object-mapper-1.1.68.jar&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,6 +141,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+<<<<<<< HEAD
 =======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -139,8 +166,10 @@
     "settings.editor.selected.configurable": "editor.preferences.completion",
     "vue.rearranger.settings.migration": "true"
 >>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
+=======
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="animals" />
@@ -180,6 +209,7 @@
       <workItem from="1695883902825" duration="42000" />
 =======
       <workItem from="1694931700814" duration="7399000" />
+<<<<<<< HEAD
       <workItem from="1695791616355" duration="19000" />
 >>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
     </task>
@@ -190,6 +220,20 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1694944986306</updated>
+=======
+      <workItem from="1695791616355" duration="2403000" />
+      <workItem from="1695878295032" duration="2979000" />
+      <workItem from="1695883758143" duration="142000" />
+      <workItem from="1695883946864" duration="360000" />
+    </task>
+    <task id="LOCAL-00001" summary="add check in executorService">
+      <option name="closed" value="true" />
+      <created>1695793116591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695793116591</updated>
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -221,8 +265,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="add childrenFactory and streams in class animal" />
     <option name="LAST_COMMIT_MESSAGE" value="add childrenFactory and streams in class animal" />
+=======
+    <MESSAGE value="Merge pull request #1 from malyniak/development&#10;&#10;Development" />
+    <MESSAGE value="add check in executorService" />
+    <option name="LAST_COMMIT_MESSAGE" value="add check in executorService" />
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

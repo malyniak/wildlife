@@ -6,7 +6,6 @@ import animals.herbivores.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import static general.Constants.*;
 
@@ -40,6 +39,7 @@ public class Wolf extends Predator {
         getCanEat().putAll(Map.of(Horse.class, 10, Deer.class, 15, Rabbit.class, 60, Mouse.class, 80, Goat.class, 60,
                 Sheep.class, 70, Boar.class, 15, Buffalo.class, 10, Duck.class, 40));
     }
+<<<<<<< HEAD
 
     public void eatAnimal() {
         Random random = new Random();
@@ -64,19 +64,19 @@ public class Wolf extends Predator {
         }
     }
 
+=======
+>>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     @Override
     public void run() {
-        if (checkHealth()) {
-            if (getHealth() < MAX_HEALTH & checkEatExists()) {
-                if (getWolvesAtLocation().size() > MIN_COUNT_FOR_WOLF_FLOCK) {
-                    WolfFlock wolfFlock = new WolfFlock(getWolvesAtLocation());
-                    wolfFlock.eat();
-                } else eatAnimal();
-            }
-            eatAnimal();
-            generate();
-            move();
+        if (getHealth() < MAX_HEALTH & checkEatExists()) {
+            if (getWolvesAtLocation().size() > MIN_COUNT_FOR_WOLF_FLOCK) {
+                WolfFlock wolfFlock = new WolfFlock(getWolvesAtLocation());
+                wolfFlock.eat();
+            } else eatAnimal();
         }
+        generate();
+        move();
+        setHealth(getHealth()-DECREASE_HEALTH_OF_HUNGER);
     }
 }
 
