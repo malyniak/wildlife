@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 import static general.Constants.*;
+
 public class Menu {
     public static volatile Random random = new Random();
     private int width;
@@ -47,10 +48,12 @@ public class Menu {
             }
         }
         island.setLocations(locations);
-
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
 }
 
 

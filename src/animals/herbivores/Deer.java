@@ -19,11 +19,4 @@ public class Deer extends Herbivore {
         getCanEat().put(Plant.class, 100);
     }
 
-
-
-
-
-
-
-
 }

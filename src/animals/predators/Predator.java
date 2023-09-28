@@ -25,9 +25,10 @@ public abstract class Predator extends Animal implements EatAnimal {
     }
 
     public void run() {
-        checkHealth();
-        eatAnimal();
-        generate();
-        move();
+        if (checkHealth()) {
+            eatAnimal();
+            generate();
+            move();
+        }
     }
 }

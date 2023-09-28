@@ -18,10 +18,4 @@ public class Horse extends Herbivore {
     public void initCanEat(){
         getCanEat().put(Plant.class, 100);
     }
-
-
-
-
-
-
 }

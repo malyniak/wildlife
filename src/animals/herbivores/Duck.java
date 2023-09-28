@@ -4,10 +4,8 @@ import animals.Animal;
 import animals.EatAnimal;
 import general.Menu;
 import plant.Plant;
-
 import java.util.List;
 import java.util.Map;
-
 import static general.Constants.*;
 
 public class Duck extends Herbivore implements EatAnimal {
@@ -51,9 +49,10 @@ public class Duck extends Herbivore implements EatAnimal {
             eatPlant();
     }
     public void run() {
-        checkHealth();
-        eat();
-        generate();
-        move();
+        if(checkHealth()) {
+            eat();
+            generate();
+            move();
+        }
     }
 }

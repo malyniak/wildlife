@@ -53,9 +53,17 @@ public class Boar extends Herbivore implements EatAnimal {
     }
 
     public void run() {
+<<<<<<< HEAD
         checkHealth();
         eat();
         generate();
         move();
+=======
+       if(checkHealth()) {
+           eat();
+           generate();
+           move();
+       }
+>>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
     }
 }

@@ -127,9 +127,11 @@ public abstract class Animal extends Organism {
         System.out.printf("%s die\n", getView());
     }
 
-    public void checkHealth() {
-        if (getHealth() <= 0)
+    public boolean checkHealth() {
+        if (getHealth() <= 0) {
             die();
+            return false;
+        } return true;
     }
 
 }

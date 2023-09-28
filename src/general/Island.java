@@ -25,10 +25,11 @@ public class Island {
         for (int i = 0; i < locations.length; i++) {
             for (int j = 0; j < locations[i].length; j++) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
+<<<<<<< HEAD
                 for (Animal animal : locations[i][j].getAnimalList()) {
                     final ScheduledFuture<?> future = executorService.scheduleWithFixedDelay(() -> {
                         if (animal.isAlive()) {
@@ -52,3 +53,20 @@ public class Island {
             }
         }
     }
+=======
+                List<Animal> animals = locations[i][j].getAnimalList();
+                for (Animal animal : animals) {
+                    animals.forEach(x -> executorService.scheduleAtFixedRate(() -> {
+                        if (animal.isAlive()) {
+                            animal.run();
+                        }
+                    }, 1, 5, TimeUnit.SECONDS));
+                    consoleView.showCountAnimals();
+                    consoleView.showCountPlants();
+                }
+            }
+        }
+    }
+
+}
+>>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
