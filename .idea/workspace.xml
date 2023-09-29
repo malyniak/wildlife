@@ -9,48 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add check if alive in executorService">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_annotations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fasterxml_jackson_core_databind.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20230618.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/object_mapper_1_1_68.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-=======
-    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="add check in executorService">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
+    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Boar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Duck.java" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Goat.java" afterDir="false" />
-=======
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Herbivore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/herbivores/Mouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Predator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/Wolf.java" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/general/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wildlife.iml" beforeDir="false" />
     </list>
-=======
-    <list default="true" id="ae279b04-08ac-4bf2-a4ad-5d624d25587f" name="Changes" comment="" />
->>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
-=======
-      <change beforePath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animals/predators/WolfFlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/general/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/general/Constants.java" afterDir="false" />
-    </list>
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,14 +32,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-<<<<<<< HEAD
-        <entry key="$PROJECT_DIR$" value="tempDevel" />
-=======
-        <entry key="$PROJECT_DIR$" value="main" />
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
+        <entry key="$PROJECT_DIR$" value="devel" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -111,10 +69,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
@@ -126,48 +80,17 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-<<<<<<< HEAD
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/Desktop/object-mapper-1.1.68.jar&quot;,
-=======
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar&quot;,
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-<<<<<<< HEAD
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Вова/IdeaProjects/wildlife/.idea/lib/lombok.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
-=======
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   }
 }</component>
   <component name="RecentsManager">
@@ -198,44 +121,8 @@
       <workItem from="1694762456140" duration="5565000" />
       <workItem from="1694800646410" duration="155000" />
       <workItem from="1694843910550" duration="4761000" />
-<<<<<<< HEAD
-      <workItem from="1694931700814" duration="8705000" />
-      <workItem from="1695014641250" duration="9202000" />
-      <workItem from="1695106648790" duration="2738000" />
-      <workItem from="1695543571143" duration="15000" />
-      <workItem from="1695554229841" duration="35000" />
-      <workItem from="1695554277375" duration="26000" />
-      <workItem from="1695617117580" duration="8365000" />
-      <workItem from="1695883902825" duration="42000" />
-=======
       <workItem from="1694931700814" duration="7399000" />
-<<<<<<< HEAD
-      <workItem from="1695791616355" duration="19000" />
->>>>>>> 7eefecf92e1bbf2ff87c6c088b515d287f4dcc82
     </task>
-    <task id="LOCAL-00001" summary="add childrenFactory and streams in class animal">
-      <option name="closed" value="true" />
-      <created>1694944986306</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1694944986306</updated>
-=======
-      <workItem from="1695791616355" duration="2403000" />
-      <workItem from="1695878295032" duration="2979000" />
-      <workItem from="1695883758143" duration="142000" />
-      <workItem from="1695883946864" duration="360000" />
-    </task>
-    <task id="LOCAL-00001" summary="add check in executorService">
-      <option name="closed" value="true" />
-      <created>1695793116591</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1695793116591</updated>
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,33 +133,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/development" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-<<<<<<< HEAD
-    <MESSAGE value="add childrenFactory and streams in class animal" />
-    <option name="LAST_COMMIT_MESSAGE" value="add childrenFactory and streams in class animal" />
-=======
-    <MESSAGE value="Merge pull request #1 from malyniak/development&#10;&#10;Development" />
-    <MESSAGE value="add check in executorService" />
-    <option name="LAST_COMMIT_MESSAGE" value="add check in executorService" />
->>>>>>> 2e05f0b7ebcdfb4ec7abc153d769734015ee72d3
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -283,16 +148,5 @@
         <PinnedItemInfo parentTag="animal.Boa" memberName="isAlive" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="locations[0][1].animalList" />
-        <watch expression="locations[0][1].animalList" />
-        <watch expression="locations[0][1].animalList" />
-        <watch expression="animals" />
-        <watch expression="locations" language="JAVA" />
-        <watch expression="locations" />
-        <watch expression="this" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
