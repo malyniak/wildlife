@@ -10,6 +10,10 @@ public abstract class Predator extends Animal implements EatAnimal {
     public void eatAnimal() {
         if (getHealth() >= MAX_HEALTH & checkEatExists())
             return;
+        if(getHealth()<0) {
+            die();
+            return;
+        }
         List<Animal> animalsToEat = animalsForEat();
         Animal animal = animalsToEat.get(Menu.random.nextInt(animalsToEat.size()));
         if (Menu.random.nextInt(PERCENT + 1) <= getCanEat().get(animal.getClass())) {
@@ -29,7 +33,6 @@ public abstract class Predator extends Animal implements EatAnimal {
         return false;
     }
     public void run() {
-        checkHealth();
         eatAnimal();
         generate();
         move();

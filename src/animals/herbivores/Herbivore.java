@@ -12,6 +12,10 @@ public abstract class Herbivore extends Animal implements EatPlant {
     public void eatPlant() {
         if (getHealth() >= MAX_HEALTH & checkEatExists())
             return;
+        if(getHealth()<0) {
+            die();
+            return;
+        }
         List<Plant> plantsList = getLocation().getPlantsList();
         Plant plant = plantsList.get(Menu.random.nextInt(plantsList.size()));
         if (getCanEat().containsKey(plant.getClass())) {
@@ -22,7 +26,6 @@ public abstract class Herbivore extends Animal implements EatPlant {
         }
     }
     public void run() {
-        checkHealth();
         eatPlant();
         generate();
         move();

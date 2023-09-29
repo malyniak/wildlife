@@ -42,6 +42,10 @@ public class Boar extends Herbivore implements EatAnimal {
     public void eat() {
         if (getHealth() >= MAX_HEALTH & checkEatExists())
             return;
+        if(getHealth()<0) {
+            die();
+            return;
+        }
         if (Menu.random.nextInt(VARIANTS_TO_EAT)==0) {
             eatAnimal();
         } else

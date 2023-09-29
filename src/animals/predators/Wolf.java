@@ -51,7 +51,6 @@ public class Wolf extends Predator {
         }
     @Override
     public void run() {
-        checkHealth();
         if (getHealth() < MAX_HEALTH & checkEatExists()) {
             if(getWolvesAtLocation().size()>MIN_COUNT_FOR_WOLF_FLOCK) {
                 WolfFlock wolfFlock = new WolfFlock(getWolvesAtLocation());
