@@ -117,11 +117,6 @@ public abstract class Animal extends Organism {
         setAlive(false);
     }
 
-    public void checkHealth() {
-        if (getHealth() <= 0)
-            die();
-    }
-
 }
 
 
